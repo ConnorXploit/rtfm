@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="modal fade" id="addGastoModal" tabindex="-1" role="dialog" aria-labelledby="addGastoModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="addGastoModalLongTitle">Añadir gasto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div style="padding: 15px">
+                    <form action="{{ url_for('addgasto') }}" method="post" id="addGastoform">
+                        <div class="form-group">
+                            <label for="exampleInputAddGasto1">Texto</label>
+                            <input type="text" class="form-control" id="addGastoText" name="addGastoText" aria-describedby="addGastoTextHelp" required>
+                            <small id="addGastoTextHep" class="form-text text-muted">Introduce un texto para describir el gasto</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddGastoCantidad1">Cantidad</label>
+                            <input type="number" step="0.01" class="form-control" id="addGastoCantidad" name="addGastoCantidad" aria-describedby="addGastoCantidadHelp" required>
+                            <small id="addGastoCantidadHep" class="form-text text-muted">Introduce la cantidad del gasto</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                    <script>
+                        $(document).ready(function(){
+
+                            $('#addGastoform').on('submit',function (e) {
+                                $.ajax({
+                                    type: 'post',
+                                    url: '/addgasto',
+                                    data: $('#addGastoform').serialize(),
+                                    success: function (q) {
+                                        if( q['creado'] == true ){
+                                            row = $("<tr></tr>");
+                                            col1 = $("<td scope='row'>"+session['username']+"</td>");
+                                            col2 = $("<td>"+$('#addGastoText').val()+"</td>");
+                                            col3 = $("<td>"+$('#addGastoCantidad').val()+"</td>");
+                                            row.append(col1,col2,col3).prependTo("#gastosTabla"); 
+                                            $('#addGastoText').val('');
+                                            $('#addGastoCantidad').val('');
+                                            $('#addGastoModal').modal('hide');
+                                        } else {
+                                            console.log('algo ha petado');
+                                        }
+                                    }
+                                });
+                                e.preventDefault();
+                            });
+
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row page-titles">
+        {% if not session.logged_in %}
+            <div class="col-md-12 align-self-center"  style="text-align: center;">
+                <h3 class="text-themecolor">{{frase}}</h3>
+            </div>
+        {% else %}
+            <div class="col-md-12 align-self-center">
+                <h4 class="text-themecolor">Dashboard</h4>
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex m-b-30 align-items-center no-block">
+                        <h5 class="card-title ">Gastos</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGastoModal">
+                            Nuevo gasto
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body bg-light">
+                    <table class="table" id="gastosTabla">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pagado por</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Pagado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for gasto in gastos %}
+                                <tr>
+                                    <td scope="row">{{gasto.user_id}}</td>
+                                    <td>{{gasto.cantidad}}</td>
+                                    <td>{{gasto.pagado}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <!--<canvas id="graficoVulnerabilidades"></canvas>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body bg-light">
+                    <div id='calendar'></div>
+                    <!--<canvas id="graficoEscaneos"></canvas>-->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    {% if session.is_admin %}
+        <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLongTitle">Crear Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div style="padding: 15px">
+                        <form action="{{ url_for('add_user') }}" method="post">
+                            <div class="form-group">
+                                <label for="username">Usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Usuario">
+                                <small id="usernameHep" class="form-text text-muted">Introduce un nombre de usuario</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            </div>
+                            <label>Permisos</label>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="isAdmin" name="isAdmin">
+                                <label class="custom-control-label" for="isAdmin">Admin</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="isAuditor" name="isAuditor">
+                                <label class="custom-control-label" for="isAuditor">Auditor</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="isSocial" name="isSocial">
+                                <label class="custom-control-label" for="isSocial">Social Engineering</label>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                <label for="client_id" class="col-sm-12 form-control-label">Cliente</label>
+                                <select class="col-sm-12" id="client_id" name="client_id">
+                                    <option value="0" selected></option>
+                                    {% for cliente in clientes %}
+                                        <option value="{{cliente.id}}">{{cliente.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear usuario</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row page-titles">
+        <div class="col-md-10 align-self-center">
+            <h4 class="text-themecolor">Usuarios</h4>
+        </div>
+        {% if session.is_admin %}
+            <div class="col-md-2 align-self-right" style="text-align: right;">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">
+                    Nuevo Usuario
+                </button>
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Lista de Usuarios</h5>
+                  <div class="message-box">
+                      <div class="message-widget message-scroll">
+                        {% for entry in entries %}
+                            <!-- Message -->
+                            <a href="javascript:void(0)">
+                                <div class="user-img"> <span class="round">{{ entry.name[0] }}</span> <span class="profile-status online pull-right"></span> </div>
+                                <div class="mail-contnet">
+                                    <h5>{{ entry.name }}</h5> 
+                                </div>
+                            </a>
+                        {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}

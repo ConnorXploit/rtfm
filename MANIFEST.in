@@ -1,0 +1,3 @@
+graft rtfm/templates
+graft rtfm/static
+include rtfm/schema.sql

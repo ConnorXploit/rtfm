@@ -1,0 +1,11 @@
+.vscode/
+__pycache__/
+rtfm/__pycache__/
+rtfm.egg-info/
+rtfm/uploads/*
+rtfm/reports/*
+rtfm/payloads/*
+rtfm/downloads/*
+rtfm/rtfm.db
+rtfm/rtfm.db-shm
+rtfm/rtfm.db-wal

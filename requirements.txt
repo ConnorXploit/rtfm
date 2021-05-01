@@ -1,0 +1,6 @@
+flask
+requests
+requests_toolbelt
+schedule
+pytelegrambotapi
+python-dateutil

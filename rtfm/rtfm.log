@@ -1,0 +1,17 @@
+2021-05-01 12:08:58,947 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
+2021-05-01 12:09:18,372 - [EXCEPTION] - 'sqlite3.Cursor' object is not subscriptable
+2021-05-01 12:09:42,887 - [INFO] - <sqlite3.Cursor object at 0x000002B952C3A500>
+2021-05-01 12:10:27,296 - [EXCEPTION] - 'sqlite3.Cursor' object is not subscriptable
+2021-05-01 12:13:14,126 - [EXCEPTION] - name 'entries' is not defined
+2021-05-01 12:13:30,321 - [INFO] - -1
+2021-05-01 12:14:53,044 - [INFO] - -1
+2021-05-01 12:15:33,115 - [INFO] - <sqlite3.Row object at 0x000002354DF229F0>
+2021-05-01 12:15:33,116 - [INFO] - 1
+2021-05-01 12:45:10,730 - [EXCEPTION] - no such column: pagado
+2021-05-01 12:45:36,733 - [EXCEPTION] - no such column: pagado
+2021-05-01 13:28:11,927 - [EXCEPTION] - 'user_id'
+2021-05-01 13:28:12,132 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 1.22€
+2021-05-01 20:28:23,793 - [EXCEPTION] - 'user_id'
+2021-05-01 20:31:34,724 - [INFO] - no existe....
+2021-05-01 20:31:34,724 - [EXCEPTION] - 'user_id'
+2021-05-01 20:32:43,890 - [EXCEPTION] - 'user_id'

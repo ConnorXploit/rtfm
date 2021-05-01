@@ -1,0 +1,11 @@
+{
+    "INDEX": {
+        "FRASES": [
+            "There's no place like 127.0.0.1",
+            "Hacking Piso"
+        ],
+        "DOWNLOAD_PATH": "downloads",
+        "UPLOAD_PATH": "uploads",
+        "CHECK_VERIFY_CODE_MINUTES": 15
+    }
+}

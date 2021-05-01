@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, AdminWrap lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Elegant admin lite design, Elegant admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description" content="RTFM es una tool interna para casa">
+    <meta name="robots" content="noindex,nofollow">
+    <title>RTFM</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="{{ url_for('static', filename='assets/node_modules/morrisjs/morris.css') }}" rel="stylesheet">
+    <!--c3 plugins CSS -->
+    <link href="{{ url_for('static', filename='assets/node_modules/c3-master/c3.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- Dashboard 1 Page CSS -->
+    <!--<link href="{{ url_for('static', filename='css/pages/dashboard1.css') }}" rel="stylesheet">-->
+    <!-- Charts -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mdb.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Select Picker -->
+    <link href="{{ url_for('static', filename='css/bootstrap-select.min.css') }}" rel="stylesheet" />
+
+    <!-- Slider -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-slider.min.css') }}" />
+
+    <!-- Terminal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.terminal.min.css') }}" />
+
+    <script src="{{ url_for('static', filename='assets/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
+
+    <!-- Terminal -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.terminal.min.js') }}"></script>
+
+    <!-- Calendar -->
+    <link href="{{ url_for('static', filename='css/calendar.css') }}" rel='stylesheet' />
+    <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+    <script>
+        var global_calendar = null; 
+        var global_info_select = null; 
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                themeSystem: 'bootstrap',
+                selectable: true,
+                selectMirror: true,
+                firstDay: 1,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                },
+                locale: 'es',
+                dateClick: function(info) {
+                    global_info_select = info;
+                    $('#fechaEventText').val(info.dateStr);
+                    $('#addEventModal').modal('show');
+                },
+                select: function(info) {
+                    global_info_select = info;
+                    $('#fechaEventText').val(info.startStr + ' - ' + info.endStr);
+                    $('#addEventModal').modal('show');
+                },
+                events: "/events"
+            });
+            global_calendar = calendar;
+            calendar.render();
+        });
+    </script>
+
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">RTFM</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    {% if not session.hacker %}
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLongTitle">Iniciar sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div style="padding: 15px">
+                        <form action="{{ url_for('login') }}" method=post>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Usuario">
+                                <small id="usernameHep" class="form-text text-muted">Introduce tu nombre de usuario</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="verifyModal" tabindex="-1" role="dialog" aria-labelledby="verifyModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="verifyModalLongTitle">Crear usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div style="padding: 15px">
+                        <form action="{{ url_for('validatesignup') }}" method="post" id="verifyform">
+                            <div class="form-group">
+                                <label for="exampleInputTelegram1">Telegram</label>
+                                <input type="text" class="form-control" id="telegramverify" name="telegramverify" aria-describedby="telegramHelp" placeholder="@telegram">
+                                <small id="telegramHep" class="form-text text-muted">Introduce el @ de tu telegram</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Verify code</label>
+                                <input type="text" class="form-control" id="verify_code" name="verify_code" placeholder="0000-0000-0000-0000">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Validar</button>
+                        </form>
+                        <script>
+                            $(document).ready(function(){
+
+                                $('#verifyform').on('submit',function (e) {
+                                    $.ajax({
+                                        type: 'post',
+                                        url: '/validatesignup',
+                                        data: $('#verifyform').serialize(),
+                                        success: function (q) {
+                                            if( q['validado'] == true ){
+                                                location.reload();
+                                            }
+                                        }
+                                    });
+                                    e.preventDefault();
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="signupModalLongTitle">Crear usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div style="padding: 15px">
+                        <form action="{{ url_for('signup') }}" method="post" id="signupform">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Usuario">
+                                <small id="usernameHep" class="form-text text-muted">Introduce un nombre de usuario</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputTelegram1">Telegram</label>
+                                <input type="text" class="form-control" id="telegram" name="telegram" aria-describedby="telegramHelp" placeholder="@telegram">
+                                <small id="telegramHep" class="form-text text-muted">Introduce el @ de tu telegram</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear usuario</button>
+                        </form>
+                        <script>
+                            $(document).ready(function(){
+
+                                $('#signupform').on('submit',function (e) {
+                                    $.ajax({
+                                        type: 'post',
+                                        url: '/signup',
+                                        data: $('#signupform').serialize(),
+                                        success: function (q) {
+                                            if( q['creado'] == true ){
+                                                // Se ha creado correctamente... Abrimos el pop up del codigo enviado
+                                                $('#signupModal').modal('hide');
+                                                $('#telegramverify').val($('#telegram').val());
+                                                $('#verifyModal').modal('show');
+                                            }
+                                        }
+                                    });
+                                    e.preventDefault();
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="modal fade" id="addEventModal" tabindex="-1" role="dialog" aria-labelledby="addEventModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="addEventModalLongTitle">Añadir evento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div style="padding: 15px">
+                        <form action="{{ url_for('addevent') }}" method="post" id="addEventform">
+                            <div class="form-group">
+                                <label for="exampleInputAddEvent1">Texto</label>
+                                <input type="text" class="form-control" id="addEventText" name="addEventText" aria-describedby="addEventTextHelp" required>
+                                <small id="addEventTextHep" class="form-text text-muted">Introduce un texto para describir el evento</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputAddEvent1">Fecha</label>
+                                <input type="text" class="form-control" id="fechaEventText" name="fechaEventText" aria-describedby="fechaEventTextHelp" readonly="readonly" required>
+                                <small id="fechaEventTextHep" class="form-text text-muted">Fecha para el evento</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                        <script>
+                            $(document).ready(function(){
+
+                                $('#addEventform').on('submit',function (e) {
+                                    $.ajax({
+                                        type: 'post',
+                                        url: '/addevent',
+                                        data: $('#addEventform').serialize(),
+                                        success: function (q) {
+                                            if( q['creado'] == true ){
+                                                if ( global_info_select.dateStr !== undefined ){
+                                                    global_calendar.addEvent({
+                                                        title: $('#addEventText').val(),
+                                                        start: global_info_select.dateStr,
+                                                        end: global_info_select.dateStr
+                                                    });
+                                                } else {
+                                                    global_calendar.addEvent({
+                                                        title: $('#addEventText').val(),
+                                                        start: global_info_select.startStr,
+                                                        end: global_info_select.endStr
+                                                    });
+                                                }
+                                                $('#addEventText').val('');
+                                                $('#addEventModal').modal('hide');
+                                            } else {
+                                                console.log('algo ha petado');
+                                            }
+                                        }
+                                    });
+                                    e.preventDefault();
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header" style="border: none;">
+                    <a class="navbar-brand" href="/">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                            <!-- dark Logo text -->
+                            <img src="{{ url_for('static', filename='img/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="{{ url_for('static', filename='img/logo-text.png') }}" class="light-logo" alt="homepage" /></span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light"
+                                href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        {% if not session.hacker %}
+                            <li class="nav-item dropdown">
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signupModal">
+                                    Crear usuario
+                                </button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+                                    Iniciar sesión
+                                </button>
+                            </li>
+                        {% else %}
+                            <span class="user">{{ session.username }} </span> <a href="/logout">
+                                <li class="nav-item dropdown">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+                                        Cerrar sesión
+                                    </button>
+                                </li>
+                            </a>
+                        {% endif %}
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <div class="d-flex no-block nav-text-box align-items-center">
+                <span><img src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 50px;" alt="elegant admin template"></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li> 
+                            <a class="waves-effect waves-dark" href="{{ url_for('inicio') }}" aria-expanded="false">
+                                <i class="fa fa-tachometer"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        {% if session.hacker %}
+                            <li> 
+                                <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <i class="fa fa-table"></i>
+                                    <span class="hide-menu">VSR</span>
+                                </a>
+                            </li>
+                            <hr>
+                        {% endif %}
+                    </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                {% block contenido %}{% endblock %}
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2021 RTFM - Hacking Piso
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+    <!-- Bootstrap popper Core JavaScript -->
+    <script src="{{ url_for('static', filename='assets/node_modules/popper/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ url_for('static', filename='js/perfect-scrollbar.jquery.min.js') }}"></script>
+
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+
+    <!--Wave Effects -->
+    <!--<script src="{{ url_for('static', filename='js/waves.js') }}"></script>-->
+
+    <!--Menu sidebar -->
+    <script src="{{ url_for('static', filename='js/sidebarmenu.js') }}"></script>
+
+    <!--Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/custom.min.js') }}"></script>
+
+    <!--morris JavaScript -->
+    <script src="{{ url_for('static', filename='assets/node_modules/raphael/raphael-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/node_modules/morrisjs/morris.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/node_modules/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+
+    <!--c3 JavaScript -->
+    <script src="{{ url_for('static', filename='assets/node_modules/d3/d3.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/node_modules/c3-master/c3.min.js') }}"></script>
+
+    <!-- Slider -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-slider.min.js') }}"></script>
+
+    <!-- Chart -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
+
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='js/graficoEscaneos.js') }}"></script>-->
+</body>
+
+</html>
