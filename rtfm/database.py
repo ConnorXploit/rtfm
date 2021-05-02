@@ -85,7 +85,6 @@ def nuevoGasto(nombre, cantidad):
         db.commit()
         return True
     except Exception as e:
-        raise
         log.send(str(e), 'EXCEPTION')
         return False
 
@@ -163,20 +162,23 @@ def verificarCodigo(telegram, verify_code):
     return False
 
 def loginBBDD(name, password):
-    db = get_db()
-    password = hashlib.md5( password.encode() ).digest()
-    resp = db.execute("select id from user where name = ? and password = ? and verify_code = ?", [name, password, 'VERIFIED'])
-    respuesta = resp.fetchall()
-    if len(respuesta) == 0:
-        pass
-    else:
-        session['hacker'] = True
-        user_id = -1
-        for entry in respuesta:
-            user_id = entry['id']
-        log.send('inicia sesion {n}'.format(n=user_id))
-        session['user_id'] = user_id
-        session['username'] = name
+    try:
+        db = get_db()
+        password = hashlib.md5( password.encode() ).digest()
+        resp = db.execute("select id from user where name = ? and password = ? and verify_code = ?", [name, password, 'VERIFIED'])
+        respuesta = resp.fetchall()
+        if len(respuesta) == 0:
+            pass
+        else:
+            session['hacker'] = True
+            user_id = -1
+            for entry in respuesta:
+                user_id = entry['id']
+            log.send('inicia sesion {n} y {m}'.format(n=user_id, m=name))
+            session['user_id'] = user_id
+            session['username'] = name
+    except Exception as e:
+        log.send(str(e), 'EXCEPTION')
 
 def logoutBBDD():
     for session_type in SESSION_TYPES:
