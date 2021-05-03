@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS "gasto" (
 	"user_id"	INTEGER DEFAULT NULL,
 	"nombre" TEXT,
 	"cantidad"	REAL,
-	"pagado" BOOLEAN NOT NULL,
+	"pagado" INTEGER DEFAULT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY("user_id") REFERENCES "user"("id")
 );

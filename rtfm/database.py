@@ -81,7 +81,7 @@ def nuevoGasto(nombre, cantidad):
     try:        
         user_id = session['user_id']
         db = get_db()
-        db.execute('insert into gasto (user_id, nombre, cantidad) values (?, ?, ?)', [user_id, nombre, float(cantidad)])
+        db.execute('insert into gasto (user_id, nombre, cantidad, pagado) values (?, ?, ?, ?)', [user_id, nombre, float(cantidad), 0])
         db.commit()
         return True
     except Exception as e:
@@ -94,13 +94,27 @@ def pagarGasto(gasto_id):
         db.execute("update gasto set pagado = 1 where id = ?", [gasto_id])
         db.commit()
         return True
-    except:
+    except Exception as e:
+        log.send(str(e))
         return False
+
+def nombreGasto(gasto_id):
+    try:
+        db = get_db()
+        cur = db.execute("select nombre from gasto where id = ?", [gasto_id])
+        return cur.fetchall()[0]['nombre']
+    except Exception as e:
+        log.send(str(e))
+        return None
 
 def listaGastos():
     try:
         db = get_db()
-        cur = db.execute( "select * from gasto where pagado = 0 order by id desc" )
+        cur = db.execute( "select user.name as user, nombre, cantidad, pagado\
+         from gasto\
+         inner join user on user.id = gasto.user_id\
+         where pagado = 0\
+         order by gasto.id desc" )
         return cur.fetchall()
     except Exception as e:
         log.send(str(e), 'EXCEPTION')

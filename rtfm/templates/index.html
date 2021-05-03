@@ -3,6 +3,7 @@
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
+    {% if session.logged_in %}
     <div class="modal fade" id="addGastoModal" tabindex="-1" role="dialog" aria-labelledby="addGastoModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -37,10 +38,11 @@
                                     success: function (q) {
                                         if( q['creado'] == true ){
                                             row = $("<tr></tr>");
-                                            col1 = $("<td scope='row'>"+session['username']+"</td>");
+                                            col1 = $("<td scope='row'>{{ session['username'] }}</td>");
                                             col2 = $("<td>"+$('#addGastoText').val()+"</td>");
                                             col3 = $("<td>"+$('#addGastoCantidad').val()+"</td>");
-                                            row.append(col1,col2,col3).prependTo("#gastosTabla"); 
+                                            col4 = $("<td>NO</td>");
+                                            row.append(col1,col2,col3,col4).prependTo("#gastosTabla"); 
                                             $('#addGastoText').val('');
                                             $('#addGastoCantidad').val('');
                                             $('#addGastoModal').modal('hide');
@@ -58,6 +60,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
     <div class="row page-titles">
         {% if not session.logged_in %}
             <div class="col-md-12 align-self-center"  style="text-align: center;">
@@ -75,9 +78,11 @@
                 <div class="card-body">
                     <div class="d-flex m-b-30 align-items-center no-block">
                         <h5 class="card-title ">Gastos</h5>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGastoModal">
-                            Nuevo gasto
-                        </button>
+                        {% if session.logged_in %}
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGastoModal">
+                                Nuevo gasto
+                            </button>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="card-body bg-light">
@@ -85,6 +90,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Pagado por</th>
+                                <th scope="col">Producto</th>
                                 <th scope="col">Cantidad</th>
                                 <th scope="col">Pagado</th>
                             </tr>
@@ -92,9 +98,45 @@
                         <tbody>
                             {% for gasto in gastos %}
                                 <tr>
-                                    <td scope="row">{{gasto.user_id}}</td>
+                                    <td scope="row">{{gasto.user}}</td>
+                                    <td scope="row">{{gasto.nombre}}</td>
                                     <td>{{gasto.cantidad}}</td>
-                                    <td>{{gasto.pagado}}</td>
+                                    <td>
+                                        {% if gasto.pagado == 0 and gasto.user == session['username'] %}
+                                            NO
+                                        {% else %}
+                                            {% if gasto.pagado == 0 %}
+                                                <input id="gasto_pagar_{{gasto.id}}" type="checkbox" name="switch" data-on-text="PAGADO" data-off-text="PAGAR">
+                                                <script>
+                                                    $( "#gasto_pagar_{{gasto.id}}" ).on( "click", function() {
+                                                        $.ajax({
+                                                            type: 'post',
+                                                            url: '/addgasto',
+                                                            data: { 'gasto': "{{gasto.id}}" },
+                                                            success: function (q) {
+                                                                if( q['creado'] == true ){
+                                                                    row = $("<tr></tr>");
+                                                                    col1 = $("<td scope='row'>{{ session['username'] }}</td>");
+                                                                    col2 = $("<td>"+$('#addGastoText').val()+"</td>");
+                                                                    col3 = $("<td>"+$('#addGastoCantidad').val()+"</td>");
+                                                                    col4 = $("<td>NO</td>");
+                                                                    row.append(col1,col2,col3,col4).prependTo("#gastosTabla"); 
+                                                                    $('#addGastoText').val('');
+                                                                    $('#addGastoCantidad').val('');
+                                                                    $('#addGastoModal').modal('hide');
+                                                                } else {
+                                                                    console.log('algo ha petado');
+                                                                }
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
+                                            {% else %}
+                                                SI
+                                            {% endif %}
+                                        {% endif %}
+
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
