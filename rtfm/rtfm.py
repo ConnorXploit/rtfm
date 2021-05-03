@@ -44,7 +44,7 @@ class FlaskThread(Thread):
 from .database import loginBBDD, logoutBBDD
 from .database import crearUsuario, usuarioVerificado, regenerarVerificacion, verificarCodigo
 from .database import agregarEvento, eliminaEvento, listaEventos
-from .database import nuevoGasto, pagarGasto, listaGastos, nombreGasto
+from .database import nuevoGasto, pagarGasto, listaGastos, nombreGasto, cuantoDebo
 
 # Directorio actual
 DIR_ACTUAL = os.path.dirname(os.path.realpath(__file__))
@@ -88,11 +88,15 @@ def verify_code(telegram):
 @app.route('/')
 def inicio():
     try:
+        session_iniciada = 'hacker' in session
         frase = choice(frases)
         gastos = listaGastos()
         if not gastos:
             gastos = []
-        return render_template('index.html', frase=frase, gastos=gastos)
+        cuanto = cuantoDebo()
+        if not cuanto:
+            cuanto = 0
+        return render_template('index.html', frase=frase, gastos=gastos, cuantoDebo=cuanto, session_iniciada=session_iniciada)
     except Exception as e:
         log.send( str(e), 'EXCEPTION' )
 
@@ -144,7 +148,8 @@ def addgasto():
     try:
         addGastoText = request.form.get('addGastoText')
         addGastoCantidad = request.form.get('addGastoCantidad')
-        creado = nuevoGasto(addGastoText, addGastoCantidad)
+        compartido = 'compartido' in request.form
+        creado = nuevoGasto(addGastoText, addGastoCantidad, compartido)
         if creado:
             log.send('Se ha añadido el gasto {nombre} con un precio de {pre}€'.format(nombre=addGastoText, pre=addGastoCantidad), "GASTO")
     except Exception as e:
@@ -152,17 +157,22 @@ def addgasto():
 
     return jsonify({'creado' : creado})
     
-@app.route('/pagar/<str:gasto>', methods=['POST'])
+@app.route('/pagar/<int:gasto>', methods=['POST'])
 def pagar(gasto):
     pagado = False
     try:
-        pagado = pagarGasto(int(gasto))
-        if pagado:
-            log.send('Se ha pagado el gasto {nombre}'.format(nombre=addGastoText), "GASTO")
+        producto = pagarGasto(gasto)
+        if producto:
+            log.send('Se ha pagado el gasto {nombre}'.format(nombre=producto), "GASTO")
+            pagado = True
     except Exception as e:
         log.send( str(e), 'EXCEPTION' )
 
-    return jsonify({'creado' : creado})
+    return jsonify({'creado' : pagado})
+
+@app.route('/cuantoDebo', methods=['GET'])
+def cuanto():
+    return jsonify({'cuantoDebo' : cuantoDebo()})
 
 # Sesiones
 @app.route('/signup', methods=['POST'])

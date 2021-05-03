@@ -1,36 +1,12 @@
-2021-05-01 12:08:58,947 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
-2021-05-01 12:09:18,372 - [EXCEPTION] - 'sqlite3.Cursor' object is not subscriptable
-2021-05-01 12:09:42,887 - [INFO] - <sqlite3.Cursor object at 0x000002B952C3A500>
-2021-05-01 12:10:27,296 - [EXCEPTION] - 'sqlite3.Cursor' object is not subscriptable
-2021-05-01 12:13:14,126 - [EXCEPTION] - name 'entries' is not defined
-2021-05-01 12:13:30,321 - [INFO] - -1
-2021-05-01 12:14:53,044 - [INFO] - -1
-2021-05-01 12:15:33,115 - [INFO] - <sqlite3.Row object at 0x000002354DF229F0>
-2021-05-01 12:15:33,116 - [INFO] - 1
-2021-05-01 12:45:10,730 - [EXCEPTION] - no such column: pagado
-2021-05-01 12:45:36,733 - [EXCEPTION] - no such column: pagado
-2021-05-01 13:28:11,927 - [EXCEPTION] - 'user_id'
-2021-05-01 13:28:12,132 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 1.22€
-2021-05-01 20:28:23,793 - [EXCEPTION] - 'user_id'
-2021-05-01 20:31:34,724 - [INFO] - no existe....
-2021-05-01 20:31:34,724 - [EXCEPTION] - 'user_id'
-2021-05-01 20:32:43,890 - [EXCEPTION] - 'user_id'
-2021-05-01 21:34:30,796 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
-2021-05-02 20:39:19,087 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
-2021-05-02 20:39:37,414 - [INFO] - inicia sesion 1 y ConnorHack
-2021-05-02 20:39:43,753 - [EXCEPTION] - NOT NULL constraint failed: gasto.pagado
-2021-05-02 20:40:44,063 - [EXCEPTION] - 3 values for 4 columns
-2021-05-02 20:40:55,137 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 0.67€
-2021-05-02 20:47:20,973 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 1.77€
-2021-05-02 20:48:51,300 - [GASTO] - Se ha añadido el gasto dsaq con un precio de 3.33€
-2021-05-02 20:49:38,115 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 3.35€
-2021-05-02 21:01:51,953 - [EXCEPTION] - near "inner": syntax error
-2021-05-02 21:02:25,826 - [EXCEPTION] - no such column: user.nombre
-2021-05-02 21:02:55,345 - [EXCEPTION] - ambiguous column name: id
-2021-05-02 21:08:34,446 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
-2021-05-02 21:08:55,222 - [EXCEPTION] - 'user_id'
-2021-05-02 21:09:01,962 - [EXCEPTION] - 'user_id'
-2021-05-02 21:10:09,905 - [EXCEPTION] - 'user_id'
-2021-05-02 21:12:04,033 - [INFO] - inicia sesion 2 y bea
-2021-05-02 21:12:10,596 - [GASTO] - Se ha añadido el gasto adfds con un precio de 7.66€
-2021-05-02 21:12:41,491 - [GASTO] - Se ha añadido el gasto ljfshdsk con un precio de 4€
+2021-05-03 15:31:24,830 - [GASTO] - Se ha pagado el gasto Mudanza
+2021-05-03 15:31:27,871 - [GASTO] - Se ha pagado el gasto Ikea
+2021-05-03 15:31:34,113 - [GASTO] - Se ha añadido el gasto ropa con un precio de 200€
+2021-05-03 15:33:51,009 - [INFO] - 'username'
+2021-05-03 15:34:21,103 - [EXCEPTION] - 4 values for 5 columns
+2021-05-03 15:34:57,184 - [GASTO] - Se ha añadido el gasto Comida con un precio de 50€
+2021-05-03 15:36:42,832 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 800€
+2021-05-03 15:40:20,727 - [GASTO] - Se ha añadido el gasto asdas con un precio de 111€
+2021-05-03 15:41:16,604 - [INFO] - 'username'
+2021-05-03 15:41:49,848 - [GASTO] - Se ha añadido el gasto Tabac con un precio de 50€
+2021-05-03 15:42:28,693 - [GASTO] - Se ha añadido el gasto PUTAS con un precio de 856574€
+2021-05-03 15:43:17,735 - [GASTO] - Se ha pagado el gasto PUTAS

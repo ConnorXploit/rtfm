@@ -9,7 +9,11 @@
     <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, AdminWrap lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Elegant admin lite design, Elegant admin lite dashboard bootstrap 4 dashboard template">
     <meta name="description" content="RTFM es una tool interna para casa">
     <meta name="robots" content="noindex,nofollow">
-    <title>RTFM</title>
+    {% if session.hacker %}
+        <title>RTFM</title>
+    {% else %}
+        <title>PWND</title>
+    {% endif %}
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon.png') }}">
     <!-- This page CSS -->
@@ -201,12 +205,9 @@
                                         url: '/signup',
                                         data: $('#signupform').serialize(),
                                         success: function (q) {
-                                            if( q['creado'] == true ){
-                                                // Se ha creado correctamente... Abrimos el pop up del codigo enviado
-                                                $('#signupModal').modal('hide');
-                                                $('#telegramverify').val($('#telegram').val());
-                                                $('#verifyModal').modal('show');
-                                            }
+                                            $('#signupModal').modal('hide');
+                                            $('#telegramverify').val($('#telegram').val());
+                                            $('#verifyModal').modal('show');
                                         }
                                     });
                                     e.preventDefault();
@@ -296,7 +297,8 @@
                 <!-- ============================================================== -->
                 <div class="navbar-header" style="border: none;">
                     <a class="navbar-brand" href="/">
-                        <!-- Logo icon --><b>
+                        <!-- Logo icon -->
+                        <b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="homepage" class="dark-logo" />
@@ -304,11 +306,20 @@
                             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                            <!-- dark Logo text -->
-                            <img src="{{ url_for('static', filename='img/logo-text.png') }}" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo text -->
-                            <img src="{{ url_for('static', filename='img/logo-text.png') }}" class="light-logo" alt="homepage" /></span>
+                        <!-- Logo text -->
+                        <span>
+                            {% if session.hacker %}
+                                <!-- dark Logo text -->
+                                <img src="{{ url_for('static', filename='img/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo text -->
+                                <img src="{{ url_for('static', filename='img/logo-text.png') }}" class="light-logo" alt="homepage" />
+                            {% else %}
+                                <!-- dark Logo text -->
+                                <img src="{{ url_for('static', filename='img/logo-pwnd.png') }}" alt="homepage" class="dark-logo" />
+                                <!-- Light Logo text -->
+                                <img src="{{ url_for('static', filename='img/logo-pwnd.png') }}" class="light-logo" alt="homepage" />
+                            {% endif %}
+                        </span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -397,7 +408,7 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
+        <div class="page-wrapper" style="background-color: white;">
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -460,17 +471,16 @@
     <!-- Slider -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap-slider.min.js') }}"></script>
 
-    <!-- Chart -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-
     <!-- Bootstrap Switch -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.js" data-turbolinks-track="true"></script>
 
     <script>
         $("[name='switch']").bootstrapSwitch();
     </script>
+
+    <!-- Chart -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
 
