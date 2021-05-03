@@ -44,7 +44,7 @@ class FlaskThread(Thread):
 from .database import loginBBDD, logoutBBDD
 from .database import crearUsuario, usuarioVerificado, regenerarVerificacion, verificarCodigo
 from .database import agregarEvento, eliminaEvento, listaEventos
-from .database import nuevoGasto, pagarGasto, listaGastos
+from .database import nuevoGasto, pagarGasto, listaGastos, nombreGasto
 
 # Directorio actual
 DIR_ACTUAL = os.path.dirname(os.path.realpath(__file__))
@@ -147,6 +147,18 @@ def addgasto():
         creado = nuevoGasto(addGastoText, addGastoCantidad)
         if creado:
             log.send('Se ha añadido el gasto {nombre} con un precio de {pre}€'.format(nombre=addGastoText, pre=addGastoCantidad), "GASTO")
+    except Exception as e:
+        log.send( str(e), 'EXCEPTION' )
+
+    return jsonify({'creado' : creado})
+    
+@app.route('/pagar/<str:gasto>', methods=['POST'])
+def pagar(gasto):
+    pagado = False
+    try:
+        pagado = pagarGasto(int(gasto))
+        if pagado:
+            log.send('Se ha pagado el gasto {nombre}'.format(nombre=addGastoText), "GASTO")
     except Exception as e:
         log.send( str(e), 'EXCEPTION' )
 
