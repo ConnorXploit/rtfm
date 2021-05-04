@@ -24,4 +24,5 @@ blocks:
           - mkdir -p .pip_cache
           - pip install --cache-dir .pip_cache -r requirements.txt
           - cd rtfm
+          - export FLASK_APP=rtfm.py
           - flask run
