@@ -22,3 +22,192 @@
 2021-05-03 16:22:03,451 - [GASTO] - Se ha añadido el gasto 4534 con un precio de 4€
 2021-05-03 16:24:38,899 - [GASTO] - Se ha añadido el gasto asdds con un precio de 6€
 2021-05-03 16:24:47,708 - [GASTO] - Se ha añadido el gasto sdfdsf con un precio de 8€
+2021-05-03 17:57:35,893 - [INFO] - 'username'
+2021-05-03 17:57:50,942 - [INFO] - 'username'
+2021-05-03 21:06:59,503 - [INFO] - 'username'
+2021-05-04 08:38:09,499 - [INFO] - 'username'
+2021-05-04 08:38:44,657 - [GASTO] - Se ha añadido el gasto Kebab con un precio de 16.69€
+2021-05-04 12:24:27,244 - [INFO] - 'username'
+2021-05-04 12:27:06,362 - [CALENDARIO] - Se ha añadido el evento fiesta del dia 2021-05-05 al dia 2021-05-09
+2021-05-04 12:30:15,248 - [INFO] - 'username'
+2021-05-04 12:30:46,239 - [INFO] - 'username'
+2021-05-04 12:30:59,142 - [INFO] - 'username'
+2021-05-04 12:31:41,500 - [GASTO] - Se ha añadido el gasto Goiko con un precio de 39.09€
+2021-05-04 12:31:48,784 - [GASTO] - Se ha añadido el gasto Aso con un precio de 60€
+2021-05-04 12:32:11,386 - [GASTO] - Se ha añadido el gasto Starbucks 1 con un precio de 16.55€
+2021-05-04 12:32:41,645 - [GASTO] - Se ha añadido el gasto Pollo frito con un precio de 16€
+2021-05-04 12:33:01,747 - [GASTO] - Se ha añadido el gasto Starbucks 2 con un precio de 16€
+2021-05-04 12:35:33,320 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-06-01 al dia 2021-06-05
+2021-05-04 12:36:44,954 - [INFO] - 'username'
+2021-05-04 12:36:45,450 - [INFO] - <sqlite3.Row object at 0x000002410E3D34F0>
+2021-05-04 12:36:46,948 - [INFO] - 'username'
+2021-05-04 12:36:47,161 - [INFO] - <sqlite3.Row object at 0x000002410E3D3190>
+2021-05-04 12:36:58,282 - [INFO] - <sqlite3.Row object at 0x000002410E3D3190>
+2021-05-04 13:40:44,205 - [INFO] - 'username'
+2021-05-04 13:40:44,558 - [INFO] - <sqlite3.Row object at 0x000002410E3D33F0>
+2021-05-04 13:40:51,601 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
+2021-05-04 13:47:52,336 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
+2021-05-04 13:47:54,130 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
+2021-05-04 13:48:04,838 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-07-01 al dia 2021-07-06
+2021-05-04 13:48:06,353 - [INFO] - <sqlite3.Row object at 0x000002410E3D3290>
+2021-05-04 13:48:06,353 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
+2021-05-04 13:48:12,605 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-08-01 al dia 2021-08-06
+2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
+2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
+2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
+2021-05-04 13:48:17,556 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-09-01 al dia 2021-09-06
+2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EF0>
+2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
+2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3570>
+2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3AB0>
+2021-05-04 13:48:23,273 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-10-01 al dia 2021-10-06
+2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B50>
+2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E352CB0>
+2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F030>
+2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F3F0>
+2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F1B0>
+2021-05-04 13:48:29,807 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-11-01 al dia 2021-11-06
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EB0>
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D31F0>
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3650>
+2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3910>
+2021-05-04 13:48:35,191 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-12-01 al dia 2021-12-06
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E352B90>
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FEF0>
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42F110>
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42F090>
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FF10>
+2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FED0>
+2021-05-04 13:48:40,792 - [INFO] - <sqlite3.Row object at 0x000002410E42FDB0>
+2021-05-04 13:48:45,091 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-01-01 al dia 2022-01-06
+2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EF0>
+2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D3AB0>
+2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
+2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D31F0>
+2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EB0>
+2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
+2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3570>
+2021-05-04 13:48:51,067 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-02-01 al dia 2022-02-06
+2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3A70>
+2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D34D0>
+2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
+2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E70>
+2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3170>
+2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D31B0>
+2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3C70>
+2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D33F0>
+2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
+2021-05-04 13:48:55,467 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-03-01 al dia 2022-03-06
+2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3590>
+2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3110>
+2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3510>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D30F0>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3630>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D34F0>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3090>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3370>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
+2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3150>
+2021-05-04 13:48:59,959 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-04-01 al dia 2022-04-06
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3210>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D30D0>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
+2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
+2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D3210>
+2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D30D0>
+2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
+2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
+2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
+2021-05-04 13:53:13,448 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
+2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3110>
+2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
+2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
+2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
+2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FD0>
+2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
+2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FD0>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
+2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
+2021-05-04 13:53:25,854 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
+2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC530>
+2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC570>
+2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC5B0>
+2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC550>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC610>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC490>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC650>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC690>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCCBB0>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCCBF0>
+2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC9B0>
+2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBF0>
+2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BB30>
+2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1B950>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD10>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD50>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BDB0>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF50>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF70>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE90>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE70>
+2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCB0>
+2021-05-04 14:02:40,731 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCD0>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BFD0>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BA90>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF10>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BFB0>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF70>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAB0>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCF0>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD30>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BC10>
+2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAF0>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAB0>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCF0>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD30>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BA90>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BC10>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCD0>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE30>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1B9B0>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD10>
+2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBF0>
+2021-05-04 14:06:32,574 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBD0>
