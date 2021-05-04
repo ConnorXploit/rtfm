@@ -11,9 +11,9 @@ blocks:
         - name: Build
           commands:
             - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
-            - 'docker pull $DOCKER_USERNAME/hackingtools:latest || true'
-            - 'docker build --cache-from=$DOCKER_USERNAME/hackingtools:latest -t $DOCKER_USERNAME/hackingtools:latest .'
-            - 'docker push $DOCKER_USERNAME/hackingtools:latest'
+            - 'docker pull $DOCKER_USERNAME/rtfm:latest || true'
+            - 'docker build --cache-from=$DOCKER_USERNAME/rtfm:latest -t $DOCKER_USERNAME/rtfm:latest .'
+            - 'docker push $DOCKER_USERNAME/rtfm:latest'
       secrets:
         - name: dockerhub
       prologue:
