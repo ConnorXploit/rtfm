@@ -2,7 +2,8 @@
     "INDEX": {
         "FRASES": [
             "There's no place like 127.0.0.1",
-            "Hacking Piso"
+            "Hacking Piso",
+            "fsociety"
         ],
         "DOWNLOAD_PATH": "downloads",
         "UPLOAD_PATH": "uploads",
