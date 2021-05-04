@@ -13560,3 +13560,19 @@ File: scss
   min-width: 40px !important;
   padding: 5px !important;
 }
+
+.m-b-30 {
+  margin-bottom: 0px !important;
+}
+
+.cuantodebo {
+  position: absolute !important;
+  right: 55px !important;
+  text-align: right !important;
+  width: 200px !important;
+}
+
+.nuevo-gasto {
+  position: absolute !important;
+  right: 0px !important;
+}

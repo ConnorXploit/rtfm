@@ -77,11 +77,11 @@ def eliminaEvento(eventID):
 
 # Gastos
 
-def nuevoGasto(nombre, cantidad):
+def nuevoGasto(nombre, cantidad, compartido):
     try:        
         user_id = session['user_id']
         db = get_db()
-        db.execute('insert into gasto (user_id, nombre, cantidad, pagado) values (?, ?, ?, ?)', [user_id, nombre, float(cantidad), 0])
+        db.execute('insert into gasto (user_id, nombre, cantidad, pagado, compartido) values (?, ?, ?, ?, ?)', [user_id, nombre, float(cantidad), 0, 1 if compartido else 0])
         db.commit()
         return True
     except Exception as e:
@@ -93,7 +93,7 @@ def pagarGasto(gasto_id):
         db = get_db()
         db.execute("update gasto set pagado = 1 where id = ?", [gasto_id])
         db.commit()
-        return True
+        return nombreGasto(gasto_id)
     except Exception as e:
         log.send(str(e))
         return False
@@ -110,14 +110,34 @@ def nombreGasto(gasto_id):
 def listaGastos():
     try:
         db = get_db()
-        cur = db.execute( "select user.name as user, nombre, cantidad, pagado\
+        cur = db.execute( "select user.name as user, gasto.id as id, nombre, cantidad, pagado, compartido\
          from gasto\
          inner join user on user.id = gasto.user_id\
-         where pagado = 0\
          order by gasto.id desc" )
         return cur.fetchall()
     except Exception as e:
         log.send(str(e), 'EXCEPTION')
+        return None
+
+def cuantoDebo():
+    try:
+        db = get_db()
+        cur = db.execute("select user.name as nombre, sum(cantidad) as cantidad, compartido from gasto inner join user on user.id = user_id where gasto.pagado = 0 group by user_id, compartido")
+        cuenta = 0.00
+        for pagos_user in cur:
+            if pagos_user['compartido'] == 0:
+                if pagos_user['nombre'] == session['username']:
+                    cuenta -= pagos_user['cantidad']
+                else:
+                    cuenta += pagos_user['cantidad']
+            else:
+                if pagos_user['nombre'] == session['username']:
+                    cuenta -= pagos_user['cantidad']/2
+                else:
+                    cuenta += pagos_user['cantidad']/2
+        return cuenta
+    except Exception as e:
+        log.send(str(e))
         return None
 
 # Session
@@ -175,6 +195,15 @@ def verificarCodigo(telegram, verify_code):
         pass
     return False
 
+def dameMiID():
+    try:
+        db = get_db()
+        cur = db.execute("select id from user where name = '{n}'".format(n=session['username']))
+        return cur.fetchall()[0]['id']
+    except Exception as e:
+        log.send(str(e), 'EXCEPTION')
+    return False
+
 def loginBBDD(name, password):
     try:
         db = get_db()
@@ -188,12 +217,12 @@ def loginBBDD(name, password):
             user_id = -1
             for entry in respuesta:
                 user_id = entry['id']
-            log.send('inicia sesion {n} y {m}'.format(n=user_id, m=name))
             session['user_id'] = user_id
             session['username'] = name
     except Exception as e:
         log.send(str(e), 'EXCEPTION')
 
 def logoutBBDD():
-    for session_type in SESSION_TYPES:
-        session.pop(session_type, None)
+    # for session_type in SESSION_TYPES:
+    #     session.pop(session_type, None)
+    session.clear()

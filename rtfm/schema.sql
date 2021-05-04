@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS "gasto" (
 	"nombre" TEXT,
 	"cantidad"	REAL,
 	"pagado" INTEGER DEFAULT NULL,
+	"compartido" INTEGER DEFAULT NULL,
 	PRIMARY KEY("id"),
 	FOREIGN KEY("user_id") REFERENCES "user"("id")
 );

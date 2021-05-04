@@ -3,7 +3,7 @@
     <!-- ============================================================== -->
     <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
-    {% if session.logged_in %}
+    {% if session.hacker %}
     <div class="modal fade" id="addGastoModal" tabindex="-1" role="dialog" aria-labelledby="addGastoModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -25,6 +25,14 @@
                             <input type="number" step="0.01" class="form-control" id="addGastoCantidad" name="addGastoCantidad" aria-describedby="addGastoCantidadHelp" required>
                             <small id="addGastoCantidadHep" class="form-text text-muted">Introduce la cantidad del gasto</small>
                         </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" name="compartido" id="compartido" checked>
+                                <label class="form-check-label" for="compartido">
+                                    Compartido
+                                </label>
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                     <script>
@@ -40,12 +48,35 @@
                                             row = $("<tr></tr>");
                                             col1 = $("<td scope='row'>{{ session['username'] }}</td>");
                                             col2 = $("<td>"+$('#addGastoText').val()+"</td>");
-                                            col3 = $("<td>"+$('#addGastoCantidad').val()+"</td>");
-                                            col4 = $("<td>NO</td>");
-                                            row.append(col1,col2,col3,col4).prependTo("#gastosTabla"); 
+                                            col3 = $('<td style="text-align: center;">'+$('#addGastoCantidad').val()+"</td>");
+                                            if ($('input[type="checkbox"]').prop('checked')){
+                                                col4 = $('<td style="text-align: center; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></tr>');
+                                            } else {
+                                                col4 = $('<td style="text-align: center; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/></svg></tr>');
+                                            }
+                                            col5 = $('<td style="text-align: center;"><b style="color: red;">NO</b></td>');
+                                            row.append(col1,col2,col3,col4,col5).prependTo("#gastosTabla"); 
                                             $('#addGastoText').val('');
                                             $('#addGastoCantidad').val('');
+                                            $('.compartido').prop('checked', true);
                                             $('#addGastoModal').modal('hide');
+                                            $.ajax({
+                                                type: 'get',
+                                                url: '/cuantoDebo', 
+                                                success: function (q) {
+                                                    if( q['cuantoDebo'] != null ){
+                                                        if ( q['cuantoDebo'] == 0 ){
+                                                            $('#cuantoDebo').html('<span id="cuantoDebo"><b>Todo Pagado</b></span>');
+                                                        } else {
+                                                            if ( q['cuantoDebo'] < 0 ){
+                                                                $('#cuantoDebo').html('<span id="cuantoDebo" style="color: green;">Me deben: <b>'+q['cuantoDebo']*-1+'€</b></span>');
+                                                            } else {
+                                                                $('#cuantoDebo').html('<span id="cuantoDebo" style="color: red;">Debo: <b>'+q['cuantoDebo']+'€</b></span>');
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            });
                                         } else {
                                             console.log('algo ha petado');
                                         }
@@ -62,96 +93,136 @@
     </div>
     {% endif %}
     <div class="row page-titles">
-        {% if not session.logged_in %}
+        {% if session.hacker %}
             <div class="col-md-12 align-self-center"  style="text-align: center;">
                 <h3 class="text-themecolor">{{frase}}</h3>
-            </div>
-        {% else %}
-            <div class="col-md-12 align-self-center">
-                <h4 class="text-themecolor">Dashboard</h4>
             </div>
         {% endif %}
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex m-b-30 align-items-center no-block">
-                        <h5 class="card-title ">Gastos</h5>
-                        {% if session.logged_in %}
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGastoModal">
-                                Nuevo gasto
-                            </button>
+        {% if session.hacker %}
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex m-b-30 align-items-center no-block">
+                            <h5 class="card-title" style="margin-bottom: 0px;">Gastos</h5>
+                            {% if session.hacker %}
+                                <span id="cuantoDebo" class="cuantodebo">
+                                    {% if cuantoDebo == 0 %}
+                                        <span><b>Todo Pagado</b></span>
+                                    {% else %}
+                                        {% if cuantoDebo < 0 %}
+                                            <span class="cuantodebo" style="color: green;">Me deben: <b>{{ cuantoDebo * -1}}€</b></span>
+                                        {% else %}
+                                            <span class="cuantodebo" style="color: red;">Debo: <b>{{ cuantoDebo }}€</b></span>
+                                        {% endif %}
+                                    {% endif %}
+                                </span>
+                                <button type="button" class="btn btn-primary nuevo-gasto" data-toggle="modal" data-target="#addGastoModal">
+                                    +
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-body bg-light">
+                        {% if session.hacker %}
+                            <table class="table" id="gastosTabla">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Pagado por</th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col" style="text-align: center;">Cantidad</th>
+                                        <th scope="col" style="text-align: center;">Tipo</th>
+                                        <th scope="col" style="text-align: center;">Pagado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for gasto in gastos %}
+                                        <tr>
+                                            <td scope="row" style="vertical-align: middle;">{{gasto.user}}</td>
+                                            <td style="vertical-align: middle;">{{gasto.nombre}}</td>
+                                            <td style="text-align: center; vertical-align: middle;">{{gasto.cantidad}}€</td>
+                                            {% if session.hacker %}
+                                                <td style="text-align: center; vertical-align: middle;">
+                                                    {% if gasto.compartido == 1 %}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+                                                            <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                                                        </svg>
+                                                    {% else %}
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
+                                                        </svg>
+                                                    {% endif %}
+                                                </td>
+                                                <td style="text-align: center; vertical-align: middle;">
+                                                    {% if gasto.pagado == 0 and gasto.user == session['username'] %}
+                                                        <b style="color: red;">NO</b>
+                                                    {% else %}
+                                                        {% if gasto.pagado == 0 %}
+                                                            <button type="button" class="btn btn-success" id="gasto_pagar_{{gasto.id}}">Pagar</button>
+                                                            <script>
+                                                                $( "#gasto_pagar_{{gasto.id}}" ).on( "click", function() {
+                                                                    $.ajax({
+                                                                        type: 'post',
+                                                                        url: '/pagar/{{gasto.id}}', 
+                                                                        success: function (q) {
+                                                                            if( q['creado'] == true ){
+                                                                                var html = '<b style="color: green;">SI</b>';
+                                                                                var parent = document.getElementById('gasto_pagar_{{gasto.id}}').parentNode;
+                                                                                parent.innerHTML = html;
+                                                                                $.ajax({
+                                                                                    type: 'get',
+                                                                                    url: '/cuantoDebo', 
+                                                                                    success: function (q) {
+                                                                                        if( q['cuantoDebo'] != null ){
+                                                                                            if ( q['cuantoDebo'] == 0 ){
+                                                                                                $('#cuantoDebo').html('<span id="cuantoDebo"><b>Todo Pagado</b></span>');
+                                                                                            } else {
+                                                                                                if ( q['cuantoDebo'] < 0 ){
+                                                                                                    $('#cuantoDebo').html('<span id="cuantoDebo" style="color: green;">Me deben: <b>'+q['cuantoDebo']*-1+'€</b></span>');
+                                                                                                } else {
+                                                                                                    $('#cuantoDebo').html('<span id="cuantoDebo" style="color: red;">Debo: <b>'+q['cuantoDebo']+'€</b></span>');
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                });
+                                                                            } else {
+                                                                                console.log('algo ha petado');
+                                                                            }
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        {% else %}
+                                                            <b style="color: green;">SI</b>
+                                                        {% endif %}
+                                                    {% endif %}
+
+                                                </td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         {% endif %}
+                        <!--<canvas id="graficoVulnerabilidades"></canvas>-->
                     </div>
                 </div>
-                <div class="card-body bg-light">
-                    <table class="table" id="gastosTabla">
-                        <thead>
-                            <tr>
-                                <th scope="col">Pagado por</th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Pagado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for gasto in gastos %}
-                                <tr>
-                                    <td scope="row">{{gasto.user}}</td>
-                                    <td scope="row">{{gasto.nombre}}</td>
-                                    <td>{{gasto.cantidad}}</td>
-                                    <td>
-                                        {% if gasto.pagado == 0 and gasto.user == session['username'] %}
-                                            NO
-                                        {% else %}
-                                            {% if gasto.pagado == 0 %}
-                                                <input id="gasto_pagar_{{gasto.id}}" type="checkbox" name="switch" data-on-text="PAGADO" data-off-text="PAGAR">
-                                                <script>
-                                                    $( "#gasto_pagar_{{gasto.id}}" ).on( "click", function() {
-                                                        $.ajax({
-                                                            type: 'post',
-                                                            url: '/addgasto',
-                                                            data: { 'gasto': "{{gasto.id}}" },
-                                                            success: function (q) {
-                                                                if( q['creado'] == true ){
-                                                                    row = $("<tr></tr>");
-                                                                    col1 = $("<td scope='row'>{{ session['username'] }}</td>");
-                                                                    col2 = $("<td>"+$('#addGastoText').val()+"</td>");
-                                                                    col3 = $("<td>"+$('#addGastoCantidad').val()+"</td>");
-                                                                    col4 = $("<td>NO</td>");
-                                                                    row.append(col1,col2,col3,col4).prependTo("#gastosTabla"); 
-                                                                    $('#addGastoText').val('');
-                                                                    $('#addGastoCantidad').val('');
-                                                                    $('#addGastoModal').modal('hide');
-                                                                } else {
-                                                                    console.log('algo ha petado');
-                                                                }
-                                                            }
-                                                        });
-                                                    });
-                                                </script>
-                                            {% else %}
-                                                SI
-                                            {% endif %}
-                                        {% endif %}
-
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                    <!--<canvas id="graficoVulnerabilidades"></canvas>-->
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body bg-light">
+                        <div id='calendar'></div>
+                        <!--<canvas id="graficoEscaneos"></canvas>-->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="card">
-                <div class="card-body bg-light">
-                    <div id='calendar'></div>
-                    <!--<canvas id="graficoEscaneos"></canvas>-->
-                </div>
+        {% else %}
+            <div class="col-lg-12" style="text-align: center;">
+                <img src="{{ url_for('static', filename='img/notice.png') }} /">
             </div>
-        </div>
+        {% endif %}
     </div>
 {% endblock %}
