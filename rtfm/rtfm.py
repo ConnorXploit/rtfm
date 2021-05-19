@@ -42,7 +42,7 @@ class FlaskThread(Thread):
 
 # Cargamos las funciones de la BBDD
 from .database import loginBBDD, logoutBBDD
-from .database import crearUsuario, usuarioVerificado, regenerarVerificacion, verificarCodigo
+from .database import crearUsuario, usuarioVerificado, regenerarVerificacion, verificarCodigo, listaUsuarios, dameNombre
 from .database import agregarEvento, eliminaEvento, listaEventos
 from .database import nuevoGasto, pagarGasto, listaGastos, nombreGasto, cuantoDebo
 
@@ -91,12 +91,13 @@ def inicio():
         session_iniciada = 'hacker' in session
         frase = choice(frases)
         gastos = listaGastos()
+        otrosUsuarios = listaUsuarios()
         if not gastos:
             gastos = []
         cuanto = cuantoDebo()
         if not cuanto:
-            cuanto = 0
-        return render_template('index.html', frase=frase, gastos=gastos, cuantoDebo=cuanto, session_iniciada=session_iniciada)
+            cuanto = {}
+        return render_template('index.html', frase=frase, gastos=gastos, cuantoDebo=cuanto, otrosUsuarios=otrosUsuarios, session_iniciada=session_iniciada)
     except Exception as e:
         log.send( str(e), 'EXCEPTION' )
 
@@ -129,7 +130,6 @@ def events():
         datos = []
         for evento in eventos:
             valores = {}
-            log.send(evento)
             valores['title'] = evento['event_text']
             valores['start'] = evento['date_start']
             valores['end'] = evento['date_end']
@@ -147,15 +147,23 @@ def addgasto():
     creado = False
     try:
         addGastoText = request.form.get('addGastoText')
-        addGastoCantidad = request.form.get('addGastoCantidad')
+        addGastoCantidad = float(request.form.get('addGastoCantidad'))
+        usuariosGasto = request.form.getlist('compartido')
         compartido = 'compartido' in request.form
-        creado = nuevoGasto(addGastoText, addGastoCantidad, compartido)
-        if creado:
-            log.send('Se ha añadido el gasto {nombre} con un precio de {pre}€'.format(nombre=addGastoText, pre=addGastoCantidad), "GASTO")
+        gastos = []
+        usuarios = []
+        for usuario in usuariosGasto:
+            if int(usuario) is not session['user_id']:
+                creado = nuevoGasto(addGastoText, round(addGastoCantidad/len(usuariosGasto), 2), compartido, usuario)
+                if creado:
+                    usuarios.append(dameNombre(usuario))
+                    gastos.append({ 'creado' : creado, 'cantidad': round(addGastoCantidad/len(usuariosGasto), 2) })
+        if gastos:
+            log.send(f'Se ha añadido el gasto para {", ".join(usuarios)} de {addGastoText} con un precio de {addGastoCantidad}€', "GASTO")
     except Exception as e:
         log.send( str(e), 'EXCEPTION' )
 
-    return jsonify({'creado' : creado})
+    return jsonify({'gastos' : gastos})
     
 @app.route('/pagar/<int:gasto>', methods=['POST'])
 def pagar(gasto):

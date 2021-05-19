@@ -77,11 +77,11 @@ def eliminaEvento(eventID):
 
 # Gastos
 
-def nuevoGasto(nombre, cantidad, compartido):
+def nuevoGasto(nombre, cantidad, compartido, debe):
     try:        
         user_id = session['user_id']
         db = get_db()
-        db.execute('insert into gasto (user_id, nombre, cantidad, pagado, compartido) values (?, ?, ?, ?, ?)', [user_id, nombre, float(cantidad), 0, 1 if compartido else 0])
+        db.execute('insert into gasto (user_id, nombre, cantidad, pagado, compartido, debe) values (?, ?, ?, ?, ?, ?)', [user_id, nombre, float(cantidad), 0, 1 if compartido else 0, debe])
         db.commit()
         return True
     except Exception as e:
@@ -110,33 +110,91 @@ def nombreGasto(gasto_id):
 def listaGastos():
     try:
         db = get_db()
-        cur = db.execute( "select user.name as user, gasto.id as id, nombre, cantidad, pagado, compartido\
-         from gasto\
-         inner join user on user.id = gasto.user_id\
-         order by gasto.id desc" )
+        cur = db.execute( """select u.name as user, gasto.id as id, nombre, sum(cantidad) as cantidad, pagado, compartido, a.name as debe
+         from gasto
+         inner join user u on u.id = gasto.user_id
+         inner join user a on a.id = gasto.debe
+		 group by nombre, debe
+         order by gasto.id desc""" )
         return cur.fetchall()
     except Exception as e:
         log.send(str(e), 'EXCEPTION')
         return None
 
+def debenGasto(nombre, cantidad):
+    try:
+        db = get_db()
+        cur = db.execute(f"""select u.name as nombre
+            from gasto
+            inner JOIN
+                user u
+                    on u.id = gasto.debe
+            where pagado = 0
+            and nombre = '{nombre}'
+            and cantidad = {cantidad}
+            group by debe""")
+        usuarios = []
+        for user in cur:
+            usuarios.append(user['nombre'])
+        return usuarios
+    except Exception as e:
+        log.send(str(e))
+        return None
+
 def cuantoDebo():
     try:
         db = get_db()
-        cur = db.execute("select user.name as nombre, sum(cantidad) as cantidad, compartido from gasto inner join user on user.id = user_id where gasto.pagado = 0 group by user_id, compartido")
-        cuenta = 0.00
+        usuarios = listaUsuarios()
+        cur = db.execute("""select u.name as nombre, gasto.nombre as nombreGasto, sum(cantidad) as cantidad, pagado, c.name as debe, compartido
+            from gasto
+                inner join 
+                    user u
+                        on u.id = gasto.user_id 
+                inner join 
+                    user c
+                        on c.id = gasto.debe
+            where pagado = 0
+            group by user_id, compartido, pagado, compartido, debe""")
+        #select user.name as nombre, sum(cantidad) as cantidad, compartido from gasto inner join user on user.id = user_id where gasto.pagado = 0 group by user_id, compartido")
+        cuenta_usuarios = {}
+        # cuenta = 0.00
         for pagos_user in cur:
-            if pagos_user['compartido'] == 0:
-                if pagos_user['nombre'] == session['username']:
-                    cuenta -= pagos_user['cantidad']
-                else:
-                    cuenta += pagos_user['cantidad']
+            if pagos_user['nombre'] == session['username']:
+                if not pagos_user['debe'] in cuenta_usuarios:
+                    cuenta_usuarios[pagos_user['debe']] = 0.00
+                cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']
+                # cuenta -= pagos_user['cantidad']
             else:
-                if pagos_user['nombre'] == session['username']:
-                    cuenta -= pagos_user['cantidad']/2
-                else:
-                    cuenta += pagos_user['cantidad']/2
-        return cuenta
+                if pagos_user['debe'] == session['username']:
+                    if not pagos_user['nombre'] in cuenta_usuarios:
+                        cuenta_usuarios[pagos_user['nombre']] = 0.00
+                    cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']
+            # if pagos_user['compartido'] == 0:
+            #     if pagos_user['nombre'] == session['username']:
+            #         if not pagos_user['debe'] in cuenta_usuarios:
+            #             cuenta_usuarios[pagos_user['debe']] = 0.00
+            #         cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']
+            #         # cuenta -= pagos_user['cantidad']
+            #     else:
+            #         if pagos_user['debe'] == session['username']:
+            #             if not pagos_user['nombre'] in cuenta_usuarios:
+            #                 cuenta_usuarios[pagos_user['nombre']] = 0.00
+            #             cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']
+            #         # cuenta += pagos_user['cantidad']
+            # else:
+            #     if pagos_user['nombre'] == session['username']:
+            #         if not pagos_user['debe'] in cuenta_usuarios:
+            #             cuenta_usuarios[pagos_user['debe']] = 0.00
+            #         cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']/len( debenGasto( pagos_user['nombreGasto'], pagos_user['cantidad'] ) )
+            #         # cuenta -= pagos_user['cantidad']/2
+            #     else:
+            #         if not pagos_user['nombre'] in cuenta_usuarios:
+            #             cuenta_usuarios[pagos_user['nombre']] = 0.00
+            #         cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']/len( debenGasto( pagos_user['nombreGasto'], pagos_user['cantidad'] ) )
+            #         # cuenta += pagos_user['cantidad']/2
+        return cuenta_usuarios
     except Exception as e:
+        raise
         log.send(str(e))
         return None
 
@@ -165,6 +223,13 @@ def crearUsuario(name, password, telegram, verify_code, fecha_creacion):
     db.commit()
     
     return True
+
+def listaUsuarios():
+    # Cogemos todos los nombres de usuarios
+    if 'user_id' in session:
+        db = get_db()
+        cur = db.execute("select id, name from user where id != {n}".format(n=session['user_id']))
+        return cur.fetchall()
 
 def usuarioVerificado(telegram):
     # Cogemos todos los nombres de usuarios
@@ -200,6 +265,24 @@ def dameMiID():
         db = get_db()
         cur = db.execute("select id from user where name = '{n}'".format(n=session['username']))
         return cur.fetchall()[0]['id']
+    except Exception as e:
+        log.send(str(e), 'EXCEPTION')
+    return False
+
+def dameID(username):
+    try:
+        db = get_db()
+        cur = db.execute("select id from user where name = '{n}'".format(n=username))
+        return cur.fetchall()[0]['id']
+    except Exception as e:
+        log.send(str(e), 'EXCEPTION')
+    return False
+
+def dameNombre(id):
+    try:
+        db = get_db()
+        cur = db.execute("select name from user where id = {n}".format(n=id))
+        return cur.fetchall()[0]['name']
     except Exception as e:
         log.send(str(e), 'EXCEPTION')
     return False

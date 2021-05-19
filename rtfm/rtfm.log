@@ -1,303 +1,188 @@
-2021-05-03 15:31:24,830 - [GASTO] - Se ha pagado el gasto Mudanza
-2021-05-03 15:31:27,871 - [GASTO] - Se ha pagado el gasto Ikea
-2021-05-03 15:31:34,113 - [GASTO] - Se ha añadido el gasto ropa con un precio de 200€
-2021-05-03 15:33:51,009 - [INFO] - 'username'
-2021-05-03 15:34:21,103 - [EXCEPTION] - 4 values for 5 columns
-2021-05-03 15:34:57,184 - [GASTO] - Se ha añadido el gasto Comida con un precio de 50€
-2021-05-03 15:36:42,832 - [GASTO] - Se ha añadido el gasto calcetines con un precio de 800€
-2021-05-03 15:40:20,727 - [GASTO] - Se ha añadido el gasto asdas con un precio de 111€
-2021-05-03 15:41:16,604 - [INFO] - 'username'
-2021-05-03 15:41:49,848 - [GASTO] - Se ha añadido el gasto Tabac con un precio de 50€
-2021-05-03 15:42:28,693 - [GASTO] - Se ha añadido el gasto PUTAS con un precio de 856574€
-2021-05-03 15:43:17,735 - [GASTO] - Se ha pagado el gasto PUTAS
-2021-05-03 16:14:38,083 - [GASTO] - Se ha añadido el gasto Papa Johns con un precio de 31.38€
-2021-05-03 16:16:41,531 - [GASTO] - Se ha añadido el gasto test con un precio de 3€
-2021-05-03 16:18:08,519 - [GASTO] - Se ha añadido el gasto erwe con un precio de 6€
-2021-05-03 16:18:43,638 - [GASTO] - Se ha añadido el gasto asd con un precio de 54€
-2021-05-03 16:19:00,314 - [GASTO] - Se ha añadido el gasto rgre con un precio de 6€
-2021-05-03 16:19:08,822 - [GASTO] - Se ha añadido el gasto hgfh con un precio de 67€
-2021-05-03 16:19:32,366 - [GASTO] - Se ha añadido el gasto tery con un precio de 6€
-2021-05-03 16:21:32,865 - [GASTO] - Se ha añadido el gasto asdffd con un precio de 6€
-2021-05-03 16:21:42,265 - [GASTO] - Se ha añadido el gasto etrdre con un precio de 6€
-2021-05-03 16:22:03,451 - [GASTO] - Se ha añadido el gasto 4534 con un precio de 4€
-2021-05-03 16:24:38,899 - [GASTO] - Se ha añadido el gasto asdds con un precio de 6€
-2021-05-03 16:24:47,708 - [GASTO] - Se ha añadido el gasto sdfdsf con un precio de 8€
-2021-05-03 17:57:35,893 - [INFO] - 'username'
-2021-05-03 17:57:50,942 - [INFO] - 'username'
-2021-05-03 21:06:59,503 - [INFO] - 'username'
-2021-05-04 08:38:09,499 - [INFO] - 'username'
-2021-05-04 08:38:44,657 - [GASTO] - Se ha añadido el gasto Kebab con un precio de 16.69€
-2021-05-04 12:24:27,244 - [INFO] - 'username'
-2021-05-04 12:27:06,362 - [CALENDARIO] - Se ha añadido el evento fiesta del dia 2021-05-05 al dia 2021-05-09
-2021-05-04 12:30:15,248 - [INFO] - 'username'
-2021-05-04 12:30:46,239 - [INFO] - 'username'
-2021-05-04 12:30:59,142 - [INFO] - 'username'
-2021-05-04 12:31:41,500 - [GASTO] - Se ha añadido el gasto Goiko con un precio de 39.09€
-2021-05-04 12:31:48,784 - [GASTO] - Se ha añadido el gasto Aso con un precio de 60€
-2021-05-04 12:32:11,386 - [GASTO] - Se ha añadido el gasto Starbucks 1 con un precio de 16.55€
-2021-05-04 12:32:41,645 - [GASTO] - Se ha añadido el gasto Pollo frito con un precio de 16€
-2021-05-04 12:33:01,747 - [GASTO] - Se ha añadido el gasto Starbucks 2 con un precio de 16€
-2021-05-04 12:35:33,320 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-06-01 al dia 2021-06-05
-2021-05-04 12:36:44,954 - [INFO] - 'username'
-2021-05-04 12:36:45,450 - [INFO] - <sqlite3.Row object at 0x000002410E3D34F0>
-2021-05-04 12:36:46,948 - [INFO] - 'username'
-2021-05-04 12:36:47,161 - [INFO] - <sqlite3.Row object at 0x000002410E3D3190>
-2021-05-04 12:36:58,282 - [INFO] - <sqlite3.Row object at 0x000002410E3D3190>
-2021-05-04 13:40:44,205 - [INFO] - 'username'
-2021-05-04 13:40:44,558 - [INFO] - <sqlite3.Row object at 0x000002410E3D33F0>
-2021-05-04 13:40:51,601 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
-2021-05-04 13:47:52,336 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
-2021-05-04 13:47:54,130 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
-2021-05-04 13:48:04,838 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-07-01 al dia 2021-07-06
-2021-05-04 13:48:06,353 - [INFO] - <sqlite3.Row object at 0x000002410E3D3290>
-2021-05-04 13:48:06,353 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
-2021-05-04 13:48:12,605 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-08-01 al dia 2021-08-06
-2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
-2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
-2021-05-04 13:48:13,321 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
-2021-05-04 13:48:17,556 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-09-01 al dia 2021-09-06
-2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EF0>
-2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
-2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3570>
-2021-05-04 13:48:19,014 - [INFO] - <sqlite3.Row object at 0x000002410E3D3AB0>
-2021-05-04 13:48:23,273 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-10-01 al dia 2021-10-06
-2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B50>
-2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E352CB0>
-2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F030>
-2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F3F0>
-2021-05-04 13:48:24,584 - [INFO] - <sqlite3.Row object at 0x000002410E42F1B0>
-2021-05-04 13:48:29,807 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-11-01 al dia 2021-11-06
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EB0>
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3F90>
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D31F0>
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3650>
-2021-05-04 13:48:31,216 - [INFO] - <sqlite3.Row object at 0x000002410E3D3910>
-2021-05-04 13:48:35,191 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2021-12-01 al dia 2021-12-06
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E352B90>
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FEF0>
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42F110>
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42F090>
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FF10>
-2021-05-04 13:48:40,791 - [INFO] - <sqlite3.Row object at 0x000002410E42FED0>
-2021-05-04 13:48:40,792 - [INFO] - <sqlite3.Row object at 0x000002410E42FDB0>
-2021-05-04 13:48:45,091 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-01-01 al dia 2022-01-06
-2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EF0>
-2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D3AB0>
-2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
-2021-05-04 13:48:46,850 - [INFO] - <sqlite3.Row object at 0x000002410E3D31F0>
-2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3EB0>
-2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
-2021-05-04 13:48:46,851 - [INFO] - <sqlite3.Row object at 0x000002410E3D3570>
-2021-05-04 13:48:51,067 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-02-01 al dia 2022-02-06
-2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3A70>
-2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D34D0>
-2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
-2021-05-04 13:48:52,040 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E70>
-2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3170>
-2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D31B0>
-2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3C70>
-2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D33F0>
-2021-05-04 13:48:52,041 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
-2021-05-04 13:48:55,467 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-03-01 al dia 2022-03-06
-2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3590>
-2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3110>
-2021-05-04 13:48:56,451 - [INFO] - <sqlite3.Row object at 0x000002410E3D3510>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D30F0>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3630>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D34F0>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3090>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3370>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
-2021-05-04 13:48:56,452 - [INFO] - <sqlite3.Row object at 0x000002410E3D3150>
-2021-05-04 13:48:59,959 - [CALENDARIO] - Se ha añadido el evento PAGAR ALQUILER del dia 2022-04-01 al dia 2022-04-06
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3210>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D30D0>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
-2021-05-04 13:49:02,797 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
-2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D3210>
-2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D30D0>
-2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
-2021-05-04 13:49:05,408 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3430>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FB0>
-2021-05-04 13:49:05,409 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
-2021-05-04 13:53:13,448 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E50>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3830>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
-2021-05-04 13:53:13,449 - [INFO] - <sqlite3.Row object at 0x000002410E3D3110>
-2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
-2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
-2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
-2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FD0>
-2021-05-04 13:53:15,586 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
-2021-05-04 13:53:15,587 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E90>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D38F0>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3CB0>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3FD0>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3490>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3130>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3E10>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D31D0>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D3450>
-2021-05-04 13:53:25,853 - [INFO] - <sqlite3.Row object at 0x000002410E3D36D0>
-2021-05-04 13:53:25,854 - [INFO] - <sqlite3.Row object at 0x000002410E3D3B90>
-2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC530>
-2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC570>
-2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC5B0>
-2021-05-04 13:55:56,405 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC550>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC610>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC490>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC650>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC690>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCCBB0>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCCBF0>
-2021-05-04 13:55:56,406 - [INFO] - <sqlite3.Row object at 0x000001F2F6BCC9B0>
-2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBF0>
-2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BB30>
-2021-05-04 13:59:57,909 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1B950>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD10>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD50>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BDB0>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF50>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF70>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE90>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE70>
-2021-05-04 13:59:57,910 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCB0>
-2021-05-04 14:02:40,731 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCD0>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BFD0>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BA90>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF10>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BFB0>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BF70>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAB0>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCF0>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD30>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BC10>
-2021-05-04 14:02:40,732 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAF0>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BAB0>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCF0>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD30>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BA90>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BC10>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BCD0>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BE30>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1B9B0>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BD10>
-2021-05-04 14:06:32,573 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBF0>
-2021-05-04 14:06:32,574 - [INFO] - <sqlite3.Row object at 0x000001F2F6C1BBD0>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C590>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C5D0>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C610>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C5B0>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C670>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C4F0>
-2021-05-04 15:55:56,915 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C6B0>
-2021-05-04 15:55:56,916 - [INFO] - <sqlite3.Row object at 0x000001CAAD78C6F0>
-2021-05-04 15:55:56,916 - [INFO] - <sqlite3.Row object at 0x000001CAAD78CC10>
-2021-05-04 15:55:56,916 - [INFO] - <sqlite3.Row object at 0x000001CAAD78CC50>
-2021-05-04 15:55:56,916 - [INFO] - <sqlite3.Row object at 0x000001CAAD78CA10>
-2021-05-05 09:29:08,378 - [INFO] - 'username'
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAE90>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AA570>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AA950>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAE50>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AA310>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAE70>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAD10>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAF10>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AA990>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AA530>
-2021-05-05 09:29:09,744 - [INFO] - <sqlite3.Row object at 0x0000027F175AAB90>
-2021-05-05 09:29:29,432 - [INFO] - <sqlite3.Row object at 0x0000027F175AA990>
-2021-05-05 09:29:29,432 - [INFO] - <sqlite3.Row object at 0x0000027F175AAD10>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AAF10>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA950>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AAC50>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA310>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA370>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AAB10>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA330>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA610>
-2021-05-05 09:29:29,433 - [INFO] - <sqlite3.Row object at 0x0000027F175AA410>
-2021-05-05 09:29:37,526 - [GASTO] - Se ha añadido el gasto Tabaco con un precio de 5€
-2021-05-05 09:33:04,142 - [INFO] - <sqlite3.Row object at 0x0000027F175AA910>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA790>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA750>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA9D0>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA030>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA8F0>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AADD0>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA890>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AA270>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AAB70>
-2021-05-05 09:33:04,143 - [INFO] - <sqlite3.Row object at 0x0000027F175AAE50>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA9B0>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA790>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA750>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA9D0>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA030>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA910>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA8F0>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AADD0>
-2021-05-05 09:33:05,150 - [INFO] - <sqlite3.Row object at 0x0000027F175AA890>
-2021-05-05 09:33:05,151 - [INFO] - <sqlite3.Row object at 0x0000027F175AA270>
-2021-05-05 09:33:05,151 - [INFO] - <sqlite3.Row object at 0x0000027F175AAB70>
-2021-05-05 10:07:34,723 - [INFO] - <sqlite3.Row object at 0x0000027F175AA030>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA910>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA8F0>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA790>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AADD0>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AAA30>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA890>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA270>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA630>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA710>
-2021-05-05 10:07:34,724 - [INFO] - <sqlite3.Row object at 0x0000027F175AA4B0>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA8F0>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA790>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AADD0>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA4B0>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AAA30>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AAE70>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA890>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA270>
-2021-05-05 10:51:33,028 - [INFO] - <sqlite3.Row object at 0x0000027F175AA630>
-2021-05-05 10:51:33,029 - [INFO] - <sqlite3.Row object at 0x0000027F175AA310>
-2021-05-05 10:51:33,029 - [INFO] - <sqlite3.Row object at 0x0000027F175AA0B0>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F570>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F590>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F330>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F510>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F5F0>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F470>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F630>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F670>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8F6B0>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8FBD0>
-2021-05-05 11:12:07,268 - [INFO] - <sqlite3.Row object at 0x00000215EFC8FC10>
+2021-05-19 16:12:24,410 - [EXCEPTION] - can only concatenate str (not "int") to str
+2021-05-19 16:15:19,532 - [GASTO] - Se ha añadido el gasto para 1 de test con un precio de 4.0€
+2021-05-19 16:15:19,752 - [INFO] - No item with that key
+2021-05-19 16:15:52,875 - [GASTO] - Se ha añadido el gasto para 1 de asd con un precio de 3.0€
+2021-05-19 16:15:53,107 - [INFO] - No item with that key
+2021-05-19 16:16:38,204 - [GASTO] - Se ha añadido el gasto para 1 de dsf con un precio de 4.0€
+2021-05-19 16:16:38,437 - [INFO] - No item with that key
+2021-05-19 16:30:38,505 - [INFO] - No item with that key
+2021-05-19 16:30:55,065 - [INFO] - No item with that key
+2021-05-19 16:31:20,738 - [INFO] - No item with that key
+2021-05-19 16:31:58,696 - [INFO] - No item with that key
+2021-05-19 16:32:12,805 - [GASTO] - Se ha añadido el gasto para 1 de prueba con un precio de 6.0€
+2021-05-19 16:32:13,572 - [GASTO] - Se ha añadido el gasto para 2 de prueba con un precio de 6.0€
+2021-05-19 16:32:13,660 - [INFO] - No item with that key
+2021-05-19 16:32:21,551 - [INFO] - No item with that key
+2021-05-19 17:04:28,688 - [INFO] - No item with that key
+2021-05-19 17:05:05,446 - [INFO] - No item with that key
+2021-05-19 17:08:15,717 - [INFO] - 'username'
+2021-05-19 17:17:44,164 - [INFO] - 'username'
+2021-05-19 17:17:51,597 - [INFO] - 'username'
+2021-05-19 17:18:25,785 - [INFO] - 'username'
+2021-05-19 17:19:17,535 - [INFO] - 'username'
+2021-05-19 17:19:29,503 - [ERROR] - No hay usuarios con ese id
+2021-05-19 17:19:29,724 - [INFO] - 'username'
+2021-05-19 17:19:31,178 - [INFO] - 'username'
+2021-05-19 17:20:58,325 - [INFO] - 'username'
+2021-05-19 17:21:04,829 - [INFO] - 'username'
+2021-05-19 17:23:37,449 - [INFO] - 'username'
+2021-05-19 17:25:55,233 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
+2021-05-19 17:26:07,719 - [INFO] - 'username'
+2021-05-19 17:27:38,772 - [INFO] - <SecureCookieSession {'hacker': True, 'user_id': 4, 'username': 'ConnorHack'}>
+2021-05-19 17:27:38,778 - [INFO] - No item with that key
+2021-05-19 17:28:36,394 - [INFO] - No item with that key
+2021-05-19 17:29:23,150 - [INFO] - No item with that key
+2021-05-19 17:33:47,998 - [INFO] - No item with that key
+2021-05-19 17:34:33,371 - [INFO] - No item with that key
+2021-05-19 17:38:59,389 - [GASTO] - Se ha añadido el gasto para Lina de probando con un precio de 40.0€
+2021-05-19 17:39:18,652 - [GASTO] - Se ha añadido el gasto para bea de probando con un precio de 20.0€
+2021-05-19 17:39:19,127 - [GASTO] - Se ha añadido el gasto para Lina de probando con un precio de 20.0€
+2021-05-19 17:42:30,883 - [INFO] - No item with that key
+2021-05-19 17:42:47,316 - [GASTO] - Se ha añadido el gasto para bea, Lina, ConnorHack de fddsf con un precio de 66.0€
+2021-05-19 17:42:57,393 - [INFO] - No item with that key
+2021-05-19 17:43:38,124 - [INFO] - No item with that key
+2021-05-19 17:45:31,773 - [EXCEPTION] - unsupported operand type(s) for /: 'float' and 'list'
+2021-05-19 17:45:34,080 - [INFO] - No item with that key
+2021-05-19 17:46:09,840 - [INFO] - No item with that key
+2021-05-19 17:46:24,024 - [GASTO] - Se ha añadido el gasto para bea, Lina, ConnorHack de test con un precio de 99.0€
+2021-05-19 17:46:25,746 - [INFO] - No item with that key
+2021-05-19 17:47:11,085 - [INFO] - No item with that key
+2021-05-19 17:48:47,362 - [INFO] - No item with that key
+2021-05-19 17:50:27,346 - [INFO] - No item with that key
+2021-05-19 17:50:54,815 - [INFO] - No item with that key
+2021-05-19 17:51:20,249 - [INFO] - No item with that key
+2021-05-19 17:51:47,892 - [INFO] - No item with that key
+2021-05-19 17:52:52,427 - [INFO] - No item with that key
+2021-05-19 17:52:52,456 - [EXCEPTION] - Encountered unknown tag 'endfor'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-05-19 17:52:52,682 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 104, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\python39\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 231, in template
+    {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-05-19 17:53:07,415 - [INFO] - No item with that key
+2021-05-19 17:54:06,585 - [INFO] - No item with that key
+2021-05-19 17:54:06,612 - [EXCEPTION] - Encountered unknown tag 'comment'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2021-05-19 17:54:06,953 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 104, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\python39\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 159, in template
+    {% comment %} {% if gasto.debe != session['user_id'] and gasto.user != session['username'] %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'comment'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2021-05-19 17:54:32,196 - [INFO] - No item with that key
+2021-05-19 17:55:19,520 - [INFO] - No item with that key
+2021-05-19 17:59:20,406 - [INFO] - No item with that key
+2021-05-19 17:59:31,002 - [GASTO] - Se ha añadido el gasto para bea, Lina, ConnorHack de ttttteeesssttt con un precio de 120.0€
+2021-05-19 17:59:33,083 - [INFO] - No item with that key
+2021-05-19 17:59:52,706 - [GASTO] - Se ha añadido el gasto para Lina, ConnorHack de prueba con un precio de 20.0€
+2021-05-19 17:59:54,720 - [INFO] - No item with that key
+2021-05-19 18:00:03,474 - [GASTO] - Se ha añadido el gasto para Lina de otro con un precio de 50.0€
+2021-05-19 18:00:05,673 - [INFO] - No item with that key
+2021-05-19 18:00:31,962 - [INFO] - No item with that key
+2021-05-19 18:00:39,691 - [INFO] - No item with that key
+2021-05-19 18:00:46,576 - [INFO] - No item with that key
+2021-05-19 18:01:09,435 - [INFO] - No item with that key
+2021-05-19 18:01:14,162 - [INFO] - 'username'
+2021-05-19 18:01:20,547 - [INFO] - No item with that key
+2021-05-19 18:02:04,389 - [INFO] - No item with that key
+2021-05-19 18:05:53,244 - [INFO] - No item with that key
+2021-05-19 18:06:10,451 - [GASTO] - Se ha añadido el gasto para ConnorHack de ytrr con un precio de 66.0€
+2021-05-19 18:06:50,524 - [GASTO] - Se ha añadido el gasto para ConnorHack de ytrr con un precio de 66.0€
+2021-05-19 18:07:36,543 - [GASTO] - Se ha añadido el gasto para ConnorHack de ytrr con un precio de 66.0€
+2021-05-19 18:08:00,506 - [GASTO] - Se ha añadido el gasto para ConnorHack de ytrr con un precio de 66.0€
+2021-05-19 18:08:20,735 - [GASTO] - Se ha añadido el gasto para ConnorHack de ytrr con un precio de 66.0€
+2021-05-19 18:10:17,332 - [INFO] - No item with that key
+2021-05-19 18:10:39,568 - [INFO] - No item with that key
+2021-05-19 18:10:58,161 - [INFO] - No item with that key
+2021-05-19 18:11:48,298 - [GASTO] - Se ha añadido el gasto para bea, Lina de gdtgf con un precio de 55.0€
+2021-05-19 18:12:15,912 - [GASTO] - Se ha añadido el gasto para bea, Lina de gdtgf con un precio de 55.0€
+2021-05-19 18:12:35,730 - [INFO] - No item with that key
+2021-05-19 18:12:49,944 - [GASTO] - Se ha añadido el gasto para bea, Lina de erterter con un precio de 80.0€
+2021-05-19 18:12:59,037 - [INFO] - No item with that key
+2021-05-19 18:13:46,888 - [INFO] - No item with that key
+2021-05-19 18:13:46,982 - [INFO] - No item with that key
+2021-05-19 18:13:53,889 - [GASTO] - Se ha añadido el gasto para bea, Lina de sadasfd con un precio de 80.0€
+2021-05-19 18:13:54,101 - [INFO] - No item with that key
+2021-05-19 18:13:54,107 - [INFO] - No item with that key
+2021-05-19 18:15:58,871 - [INFO] - No item with that key
+2021-05-19 18:16:05,729 - [GASTO] - Se ha añadido el gasto para bea, Lina de asddf con un precio de 50.0€
+2021-05-19 18:16:05,964 - [INFO] - No item with that key
+2021-05-19 18:16:05,973 - [INFO] - No item with that key
+2021-05-19 18:17:13,076 - [INFO] - No item with that key
+2021-05-19 18:17:19,244 - [GASTO] - Se ha añadido el gasto para bea, Lina de tesst con un precio de 80.0€
+2021-05-19 18:17:19,513 - [INFO] - No item with that key
+2021-05-19 18:17:19,517 - [INFO] - No item with that key
+2021-05-19 18:17:32,554 - [INFO] - No item with that key
+2021-05-19 18:17:38,380 - [GASTO] - Se ha añadido el gasto para bea, Lina de test con un precio de 80.0€
+2021-05-19 18:17:38,596 - [INFO] - No item with that key
+2021-05-19 18:17:38,600 - [INFO] - No item with that key
+2021-05-19 18:17:39,598 - [INFO] - No item with that key
+2021-05-19 18:18:00,002 - [GASTO] - Se ha añadido el gasto para bea, Lina de sdfsgf con un precio de 80.0€
+2021-05-19 18:18:00,237 - [INFO] - No item with that key
+2021-05-19 18:18:00,241 - [INFO] - No item with that key
+2021-05-19 18:18:02,608 - [INFO] - No item with that key
+2021-05-19 18:18:17,657 - [INFO] - No item with that key
+2021-05-19 18:19:42,654 - [INFO] - No item with that key
+2021-05-19 18:20:10,026 - [INFO] - No item with that key
+2021-05-19 18:20:18,609 - [INFO] - No item with that key
+2021-05-19 18:22:35,530 - [INFO] - No item with that key
+2021-05-19 18:22:59,337 - [EXCEPTION] - No item with that key
+2021-05-19 18:30:18,139 - [GASTO] - Se ha añadido el gasto para cambiar, Lina de fgdfgfd con un precio de 55.0€
