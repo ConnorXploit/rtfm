@@ -13567,7 +13567,7 @@ File: scss
 
 .cuantodebo {
   position: absolute !important;
-  right: 55px !important;
+  right: 35px !important;
   text-align: right !important;
   width: 200px !important;
 }
@@ -13575,4 +13575,5 @@ File: scss
 .nuevo-gasto {
   position: absolute !important;
   right: 0px !important;
+  margin-right: 10px !important;
 }
