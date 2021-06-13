@@ -114,7 +114,7 @@ def listaGastos():
          from gasto
          inner join user u on u.id = gasto.user_id
          inner join user a on a.id = gasto.debe
-		 group by nombre, debe
+		 group by nombre, debe, cantidad
          order by gasto.id desc""" )
         return cur.fetchall()
     except Exception as e:
@@ -143,60 +143,36 @@ def debenGasto(nombre, cantidad):
 
 def cuantoDebo():
     try:
-        db = get_db()
-        usuarios = listaUsuarios()
-        cur = db.execute("""select u.name as nombre, gasto.nombre as nombreGasto, sum(cantidad) as cantidad, pagado, c.name as debe, compartido
-            from gasto
-                inner join 
-                    user u
-                        on u.id = gasto.user_id 
-                inner join 
-                    user c
-                        on c.id = gasto.debe
-            where pagado = 0
-            group by user_id, compartido, pagado, compartido, debe""")
-        #select user.name as nombre, sum(cantidad) as cantidad, compartido from gasto inner join user on user.id = user_id where gasto.pagado = 0 group by user_id, compartido")
-        cuenta_usuarios = {}
-        # cuenta = 0.00
-        for pagos_user in cur:
-            if pagos_user['nombre'] == session['username']:
-                if not pagos_user['debe'] in cuenta_usuarios:
-                    cuenta_usuarios[pagos_user['debe']] = 0.00
-                cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']
-                # cuenta -= pagos_user['cantidad']
-            else:
-                if pagos_user['debe'] == session['username']:
-                    if not pagos_user['nombre'] in cuenta_usuarios:
-                        cuenta_usuarios[pagos_user['nombre']] = 0.00
-                    cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']
-            # if pagos_user['compartido'] == 0:
-            #     if pagos_user['nombre'] == session['username']:
-            #         if not pagos_user['debe'] in cuenta_usuarios:
-            #             cuenta_usuarios[pagos_user['debe']] = 0.00
-            #         cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']
-            #         # cuenta -= pagos_user['cantidad']
-            #     else:
-            #         if pagos_user['debe'] == session['username']:
-            #             if not pagos_user['nombre'] in cuenta_usuarios:
-            #                 cuenta_usuarios[pagos_user['nombre']] = 0.00
-            #             cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']
-            #         # cuenta += pagos_user['cantidad']
-            # else:
-            #     if pagos_user['nombre'] == session['username']:
-            #         if not pagos_user['debe'] in cuenta_usuarios:
-            #             cuenta_usuarios[pagos_user['debe']] = 0.00
-            #         cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']/len( debenGasto( pagos_user['nombreGasto'], pagos_user['cantidad'] ) )
-            #         # cuenta -= pagos_user['cantidad']/2
-            #     else:
-            #         if not pagos_user['nombre'] in cuenta_usuarios:
-            #             cuenta_usuarios[pagos_user['nombre']] = 0.00
-            #         cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']/len( debenGasto( pagos_user['nombreGasto'], pagos_user['cantidad'] ) )
-            #         # cuenta += pagos_user['cantidad']/2
-        return cuenta_usuarios
+        if 'username' in session:
+            db = get_db()
+            usuarios = listaUsuarios()
+            cur = db.execute("""select u.name as nombre, sum(cantidad) as cantidad, pagado, c.name as debe, compartido
+                from gasto
+                    inner join 
+                        user u
+                            on u.id = gasto.user_id 
+                    inner join 
+                        user c
+                            on c.id = gasto.debe
+                where pagado = 0
+                group by user_id, compartido, pagado, compartido, debe""")
+
+            cuenta_usuarios = {}
+            for pagos_user in cur:
+                if pagos_user['nombre'] == session['username']:
+                    if not pagos_user['debe'] in cuenta_usuarios:
+                        cuenta_usuarios[pagos_user['debe']] = 0.00
+                    cuenta_usuarios[pagos_user['debe']] -= pagos_user['cantidad']
+                    # cuenta -= pagos_user['cantidad']
+                else:
+                    if pagos_user['debe'] == session['username']:
+                        if not pagos_user['nombre'] in cuenta_usuarios:
+                            cuenta_usuarios[pagos_user['nombre']] = 0.00
+                        cuenta_usuarios[pagos_user['nombre']] += pagos_user['cantidad']
+            return cuenta_usuarios
     except Exception as e:
-        raise
         log.send(str(e))
-        return None
+    return None
 
 # Session
 

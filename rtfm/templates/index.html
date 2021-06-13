@@ -75,8 +75,9 @@
                                                 } else {
                                                     col4 = $('<td style="text-align: center; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/></svg></tr>');
                                                 }
-                                                col5 = $('<td style="text-align: center;"><b style="color: red;">NO</b></td>');
-                                                row.append(col1,col2,col3,col4,col5).prependTo("#gastosTabla"); 
+                                                col5 = $('<td style="vertical-align: middle;">'+q['gastos'][gasto]['debe']+'</td>');
+                                                col6 = $('<td style="text-align: center;"><b style="color: red;">NO</b></td>');
+                                                row.append(col1,col2,col3,col4,col5,col6).prependTo("#gastosTabla"); 
                                                 $.ajax({
                                                     type: 'get',
                                                     url: '/cuantoDebo', 
@@ -138,9 +139,9 @@
                                         {% for usuario in cuantoDebo %}
                                             {% if usuario != session.username %}
                                                 {% if cuantoDebo[usuario] < 0 %}
-                                                    <span class="cuantodebo" style="color: green;">{{usuario}} me debe: <b>{{ cuantoDebo[usuario] * -1}}€</b></span></br>
+                                                    <span class="cuantodebo" style="color: green;">{{usuario}} me debe: <b>{{ cuantoDebo[usuario]*-1|round(2)}}€</b></span></br>
                                                 {% else %}
-                                                    <span class="cuantodebo" style="color: red;">Le debo a {{usuario}}: <b>{{ cuantoDebo[usuario] }}€</b></span></br>
+                                                    <span class="cuantodebo" style="color: red;">Le debo a {{usuario}}: <b>{{ cuantoDebo[usuario]|round(2) }}€</b></span></br>
                                                 {% endif %}
                                             {% endif %}
                                         {% endfor %}

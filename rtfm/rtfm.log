@@ -186,3 +186,82 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'comment'. Jinja 
 2021-05-19 18:22:35,530 - [INFO] - No item with that key
 2021-05-19 18:22:59,337 - [EXCEPTION] - No item with that key
 2021-05-19 18:30:18,139 - [GASTO] - Se ha añadido el gasto para cambiar, Lina de fgdfgfd con un precio de 55.0€
+2021-05-19 19:15:12,276 - [EXCEPTION] - 'username'
+2021-05-19 20:30:58,072 - [GASTO] - Se ha añadido el gasto para Bea, Lina de lidl con un precio de 100.0€
+2021-05-19 20:32:19,144 - [CALENDARIO] - Se ha añadido el evento Vienen Padres Ivan para el dia 2021-05-22
+2021-05-19 21:07:50,341 - [CALENDARIO] - Se ha añadido el evento Padrón para el dia 2021-05-20T12:00:00+02:00
+2021-05-19 21:08:50,495 - [CALENDARIO] - Se ha añadido el evento Limpiar Casa del dia 2021-05-21T15:00:00+02:00 al dia 2021-05-21T21:30:00+02:00
+2021-05-22 12:18:24,106 - [GASTO] - Se ha añadido el gasto para Lina de Pizza Hut con un precio de 45.5€
+2021-05-22 20:46:05,385 - [GASTO] - Se ha añadido el gasto para Lina de Silla y Cascos con un precio de 153.0€
+2021-05-22 20:49:26,453 - [GASTO] - Se ha añadido el gasto para ConnorHack de Aso, y charcutería  con un precio de 54.0€
+2021-05-24 12:45:47,205 - [GASTO] - Se ha pagado el gasto Aso, y charcutería 
+2021-05-24 12:45:48,250 - [GASTO] - Se ha pagado el gasto Aso, y charcutería 
+2021-05-24 12:47:08,575 - [GASTO] - Se ha añadido el gasto para Bea de Starbucks con un precio de 31.5€
+2021-05-24 13:34:26,362 - [GASTO] - Se ha añadido el gasto para Bea, Lina de test con un precio de 4444.0€
+2021-05-28 08:58:00,421 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
+2021-05-28 09:12:00,584 - [INFO] - Comenzamos el schedule : verify_code
+2021-05-28 09:12:04,521 - [BACKGROUND] - Loading background process for VERIFY_CODE_USER
+2021-05-28 09:15:50,054 - [GASTO] - Se ha añadido el gasto para ConnorHack de TAO  con un precio de 6.66€
+2021-05-28 09:16:20,696 - [GASTO] - Se ha añadido el gasto para ConnorHack de Starbucks con un precio de 15.2€
+2021-05-28 09:16:59,275 - [GASTO] - Se ha añadido el gasto para ConnorHack de La Mafia se sienta a la mesa  con un precio de 37.38€
+2021-05-28 09:17:03,832 - [GASTO] - Se ha añadido el gasto para ConnorHack de La Mafia se sienta a la mesa  con un precio de 37.38€
+2021-05-28 09:18:40,006 - [GASTO] - Se ha añadido el gasto para Lina, ConnorHack de Starbucks con un precio de 16.5€
+2021-05-28 09:20:17,112 - [GASTO] - Se ha añadido el gasto para Lina, ConnorHack de Asociación día Victor con un precio de 50.0€
+2021-05-28 09:20:21,570 - [GASTO] - Se ha añadido el gasto para Lina, ConnorHack de Asociación día Victor con un precio de 50.0€
+2021-05-28 09:20:52,081 - [GASTO] - Se ha añadido el gasto para ConnorHack de aso (del último día que hemos ido juntos) con un precio de 50.0€
+2021-05-28 09:20:56,581 - [GASTO] - Se ha añadido el gasto para ConnorHack de aso (del último día que hemos ido juntos) con un precio de 50.0€
+2021-05-28 09:21:32,751 - [GASTO] - Se ha añadido el gasto para Lina, ConnorHack de Tabaco  con un precio de 15.0€
+2021-05-28 09:21:52,968 - [GASTO] - Se ha añadido el gasto para ConnorHack de Asociación  con un precio de 40.0€
+2021-05-28 09:22:32,180 - [GASTO] - Se ha añadido el gasto para ConnorHack de Burger king con un precio de 24.18€
+2021-05-28 09:27:00,966 - [INFO] - Comenzamos el schedule : verify_code
+2021-05-28 09:30:59,480 - [GASTO] - Se ha añadido el gasto para ConnorHack de 40 aso TEST con un precio de 40.0€
+2021-05-28 09:38:36,582 - [EXCEPTION] - database is locked
+2021-05-28 09:39:18,243 - [EXCEPTION] - database is locked
+2021-05-28 09:39:21,025 - [EXCEPTION] - database is locked
+2021-05-31 10:24:52,872 - [GASTO] - Se ha añadido el gasto para Lina de Taco Bell con un precio de 38.0€
+2021-05-31 10:54:31,467 - [GASTO] - Se ha añadido el gasto para Lina de Starbucks con un precio de 20.0€
+2021-05-31 18:54:02,329 - [GASTO] - Se ha añadido el gasto para Lina de Five Guys con un precio de 30.0€
+2021-06-03 18:41:36,995 - [GASTO] - Se ha añadido el gasto para Lina de Mi cocina Asiatica con un precio de 34.0€
+2021-06-03 18:45:59,068 - [GASTO] - Se ha añadido el gasto para Lina de Tierra Burrito con un precio de 42.0€
+2021-06-03 18:47:57,572 - [GASTO] - Se ha pagado el gasto Silla y Cascos
+2021-06-03 18:48:53,496 - [GASTO] - Se ha pagado el gasto Pizza Hut
+2021-06-03 18:49:01,742 - [GASTO] - Se ha pagado el gasto Compra Comida DIA
+2021-06-03 18:49:22,945 - [GASTO] - Se ha pagado el gasto Asociación día Victor
+2021-06-03 18:49:57,946 - [GASTO] - Se ha pagado el gasto Aso, y charcutería 
+2021-06-03 18:51:41,287 - [GASTO] - Se ha añadido el gasto para Lina de Alquiler + 6 € ajuste pagos con un precio de 472.0€
+2021-06-04 10:24:16,995 - [GASTO] - Se ha añadido el gasto para Lina de Starbucks y Bocata con un precio de 25.0€
+2021-06-04 10:25:12,758 - [GASTO] - Se ha pagado el gasto Starbucks y Bocata
+2021-06-04 10:25:15,040 - [GASTO] - Se ha pagado el gasto Alquiler + 6 € ajuste pagos
+2021-06-04 10:25:16,849 - [GASTO] - Se ha pagado el gasto Tierra Burrito
+2021-06-04 10:25:18,498 - [GASTO] - Se ha pagado el gasto Mi cocina Asiatica
+2021-06-04 10:25:20,841 - [GASTO] - Se ha pagado el gasto Five Guys
+2021-06-04 10:25:28,182 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:25:30,374 - [GASTO] - Se ha pagado el gasto Taco Bell
+2021-06-04 10:25:43,732 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:25:45,374 - [GASTO] - Se ha pagado el gasto Tabaco 
+2021-06-04 10:36:16,195 - [GASTO] - Se ha añadido el gasto para ConnorHack de Iberdrola mayo con un precio de 60.0€
+2021-06-04 10:36:27,828 - [GASTO] - Se ha añadido el gasto para ConnorHack de Pastelería con un precio de 40.0€
+2021-06-04 10:36:47,738 - [GASTO] - Se ha añadido el gasto para ConnorHack de Estanco con un precio de 34.95€
+2021-06-04 10:37:58,075 - [GASTO] - Se ha añadido el gasto para ConnorHack de Queso + Morcilla + oreja con un precio de 24.7€
+2021-06-04 10:38:27,102 - [GASTO] - Se ha añadido el gasto para ConnorHack de Comida para llevar con un precio de 30.0€
+2021-06-04 10:52:05,855 - [GASTO] - Se ha pagado el gasto Comida para llevar
+2021-06-04 10:52:07,122 - [GASTO] - Se ha pagado el gasto Queso + Morcilla + oreja
+2021-06-04 10:52:08,038 - [GASTO] - Se ha pagado el gasto Estanco
+2021-06-04 10:52:09,080 - [GASTO] - Se ha pagado el gasto Pastelería
+2021-06-04 10:52:09,954 - [GASTO] - Se ha pagado el gasto Iberdrola mayo
+2021-06-04 10:52:11,546 - [GASTO] - Se ha pagado el gasto Burger king
+2021-06-04 10:52:12,755 - [GASTO] - Se ha pagado el gasto Asociación
+2021-06-04 10:52:13,739 - [GASTO] - Se ha pagado el gasto Tabaco
+2021-06-04 10:52:14,638 - [GASTO] - Se ha pagado el gasto aso (del último día que hemos ido juntos)
+2021-06-04 10:52:15,472 - [GASTO] - Se ha pagado el gasto Asociación día Victor
+2021-06-04 10:52:16,355 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:52:22,239 - [GASTO] - Se ha pagado el gasto La Mafia se sienta a la mesa 
+2021-06-04 10:52:24,723 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:52:25,889 - [GASTO] - Se ha pagado el gasto TAO 
+2021-06-04 10:52:27,414 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:52:28,556 - [GASTO] - Se ha pagado el gasto Starbucks
+2021-06-04 10:52:29,972 - [GASTO] - Se ha pagado el gasto Pizza Hut
+2021-06-04 10:52:31,130 - [GASTO] - Se ha pagado el gasto Chino
+2021-06-04 10:52:32,731 - [GASTO] - Se ha pagado el gasto Compra Comida DIA
+2021-06-04 10:52:37,358 - [GASTO] - Se ha pagado el gasto Chino
+2021-06-04 10:55:11,430 - [CALENDARIO] - Se ha añadido el evento Karla y Álvaro Fuerteventura.  del dia 2021-09-06 al dia 2021-09-16

@@ -156,8 +156,9 @@ def addgasto():
             if int(usuario) is not session['user_id']:
                 creado = nuevoGasto(addGastoText, round(addGastoCantidad/len(usuariosGasto), 2), compartido, usuario)
                 if creado:
-                    usuarios.append(dameNombre(usuario))
-                    gastos.append({ 'creado' : creado, 'cantidad': round(addGastoCantidad/len(usuariosGasto), 2) })
+                    user_temp = dameNombre(usuario)
+                    usuarios.append(user_temp)
+                    gastos.append({ 'creado' : creado, 'cantidad': round(addGastoCantidad/len(usuariosGasto), 2), 'debe': user_temp })
         if gastos:
             log.send(f'Se ha añadido el gasto para {", ".join(usuarios)} de {addGastoText} con un precio de {addGastoCantidad}€', "GASTO")
     except Exception as e:
