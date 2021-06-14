@@ -36,4 +36,10 @@ CREATE TABLE IF NOT EXISTS "gasto" (
 	FOREIGN KEY("user_id") REFERENCES "user"("id"),
 	FOREIGN KEY("debe") REFERENCES "user"("id")
 );
+CREATE TABLE IF NOT EXISTS "farmacia" (
+	"id"	INTEGER DEFAULT NULL,
+	"nombre" TEXT,
+	"cantidad"	INTEGER,
+	PRIMARY KEY("id")
+);
 COMMIT;

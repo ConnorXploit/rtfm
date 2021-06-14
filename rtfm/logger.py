@@ -8,7 +8,7 @@ class Logger():
         self.dir = dir
         log = logging.getLogger('werkzeug')
         log.setLevel(logging.ERROR)
-        self.notify_telegram = [ "ERROR", "EXCEPTION", "CALENDARIO", "GASTO" ]
+        self.notify_telegram = [ "ERROR", "EXCEPTION", "CALENDARIO", "GASTO", "FARMACIA" ]
 
     def send(self, message, status='INFO'):
         logging.basicConfig(

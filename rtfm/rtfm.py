@@ -45,6 +45,7 @@ from .database import loginBBDD, logoutBBDD
 from .database import crearUsuario, usuarioVerificado, regenerarVerificacion, verificarCodigo, listaUsuarios, dameNombre
 from .database import agregarEvento, eliminaEvento, listaEventos
 from .database import nuevoGasto, pagarGasto, listaGastos, nombreGasto, cuantoDebo
+from .database import listaProductos, nuevoActualizaProducto
 
 # Directorio actual
 DIR_ACTUAL = os.path.dirname(os.path.realpath(__file__))
@@ -182,6 +183,71 @@ def pagar(gasto):
 @app.route('/cuantoDebo', methods=['GET'])
 def cuanto():
     return jsonify({'cuantoDebo' : cuantoDebo()})
+
+# Productos
+@app.route('/farmacia')
+def farmacia():
+    try:
+        session_iniciada = 'hacker' in session
+        productos = listaProductos()
+        frase = choice(frases)
+        if not productos:
+            productos = []
+        return render_template('productos.html', frase=frase, productos=productos, session_iniciada=session_iniciada)
+    except Exception as e:
+        log.send( str(e), 'EXCEPTION' )
+
+    return render_template('index.html')
+
+@app.route('/actualizarproducto', methods=['POST'])
+def actualizarProducto():
+    try:
+        values = request.get_json()
+        producto = values.get('producto')
+        cantidad = values.get('cantidad')
+
+        if cantidad == 0:
+            return jsonify({'error' : 'non-zero-value'})
+
+        try:
+            cantidad = int(cantidad)
+        except:
+            return jsonify({'error' : 'non-int-value'})
+
+        cantidad_antes = cantidad * -1
+
+        actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+
+        msg = ''
+        error = None
+
+        if actualizado:
+            if existia:
+                if quedan:
+                    msg = f'Se ha actualizado el fármaco {producto} y ahora hay {cantidad} pilulas'
+
+                else:
+                    msg = f'Se ha actualizado el fármaco {producto} y ahora quedan solo {cantidad} pilulas... Mejor si compras'
+
+            else:
+                msg = f'Se ha añadido el fármaco {producto} con la cantidad de {cantidad} pilulas'
+
+        else:
+            if existia:
+                error = f"No se pueden coger {cantidad_antes} pilulas... Solo hay {cantidad}"
+            else:
+                error = 'error-cant-create-or-update'
+
+        if error:
+            log.send(error, 'ERROR')
+            return jsonify({'error' : error})
+
+        log.send(msg, "FARMACIA")
+        return jsonify({'result' : msg})
+
+    except Exception as e:
+        log.send( str(e), 'EXCEPTION' )
+        return jsonify({'error' : str(e)})
 
 # Sesiones
 @app.route('/signup', methods=['POST'])

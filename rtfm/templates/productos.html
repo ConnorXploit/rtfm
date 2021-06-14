@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    {% if session.hacker %}
+    <div class="modal fade" id="addGastoModal" tabindex="-1" role="dialog" aria-labelledby="addGastoModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="addGastoModalLongTitle">Añadir gasto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div style="padding: 15px">
+                    <form action="{{ url_for('addgasto') }}" method="post" id="addGastoform">
+                        <div class="form-group">
+                            <label for="exampleInputAddGasto1">Texto</label>
+                            <input type="text" class="form-control" id="addGastoText" name="addGastoText" aria-describedby="addGastoTextHelp" required>
+                            <small id="addGastoTextHep" class="form-text text-muted">Introduce un texto para describir el gasto</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAddGastoCantidad1">Cantidad</label>
+                            <input type="number" step="0.01" class="form-control" id="addGastoCantidad" name="addGastoCantidad" aria-describedby="addGastoCantidadHelp" required>
+                            <small id="addGastoCantidadHep" class="form-text text-muted">Introduce la cantidad del gasto</small>
+                        </div>
+                        <div class="form-group">
+                            {% for usuario in otrosUsuarios %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="{{usuario.id}}" name="compartido" checked>
+                                    <label class="form-check-label" for="compartido">
+                                        {{usuario.name}}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{session['user_id']}}" name="compartido" checked>
+                                <label class="form-check-label" for="compartido">
+                                    {{session['username']}}
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                    <script>
+                        $(document).ready(function(){
+
+                            $('#addGastoform').on('submit',function (e) {
+                                checked = $("input[name=compartido]:checked").length;
+
+                                if ( !checked ) {
+                                    alert("Debes seleccionar al menos una persona para el gasto");
+                                    e.preventDefault();
+                                }
+
+                                if ( checked == 1 && $("input[name=compartido]:checked")[0].value == '{{session["user_id"]}}'){
+                                    alert("Debes seleccionar otras personas aparte de ti para añadir el gasto");
+                                    e.preventDefault();
+                                }
+
+                                $.ajax({
+                                    type: 'post',
+                                    url: '/addgasto',
+                                    data: $('#addGastoform').serialize(),
+                                    success: function (q) {
+                                        if( q['gastos'] ){
+                                            for( gasto in q['gastos'] ){
+                                                row = $("<tr></tr>");
+                                                col1 = $("<td scope='row'>{{ session['username'] }}</td>");
+                                                col2 = $("<td>"+$('#addGastoText').val()+"</td>");
+                                                col3 = $('<td style="text-align: center;">'+q['gastos'][gasto]['cantidad']+"€</td>");
+                                                if ($('input[type="checkbox"]').prop('checked')){
+                                                    col4 = $('<td style="text-align: center; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16"><path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></tr>');
+                                                } else {
+                                                    col4 = $('<td style="text-align: center; vertical-align: middle;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/></svg></tr>');
+                                                }
+                                                col5 = $('<td style="vertical-align: middle;">'+q['gastos'][gasto]['debe']+'</td>');
+                                                col6 = $('<td style="text-align: center;"><b style="color: red;">NO</b></td>');
+                                                row.append(col1,col2,col3,col4,col5,col6).prependTo("#gastosTabla"); 
+                                                $.ajax({
+                                                    type: 'get',
+                                                    url: '/cuantoDebo', 
+                                                    success: function (q) {
+                                                        if( q['cuantoDebo'] != null ){
+                                                            if ( q['cuantoDebo'] == {} ){
+                                                                $('#cuantoDebo').html('<span name="cuantoDebo"><b>Todo Pagado</b></span>');
+                                                            } else {
+                                                                for ( i in q['cuantoDebo'] ) {
+                                                                    if ( q['cuantoDebo'][i] < 0 ){
+                                                                        $('#cuantoDebo').html('<span name="cuantoDebo" style="color: green;">' + i + ' me deben: <b>'+q['cuantoDebo'][i]*-1+'€</b></span></br>');
+                                                                    } else {
+                                                                        $('#cuantoDebo').html('<span name="cuantoDebo" style="color: red;">Le debo a ' + i + ': <b>'+q['cuantoDebo'][i]+'€</b></span></br>');
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                            $('#addGastoText').val('');
+                                            $('#addGastoCantidad').val('');
+                                            $('.compartido').prop('checked', true);
+                                            $('#addGastoModal').modal('hide');
+                                        } else {
+                                            console.log('algo ha petado');
+                                        }
+                                    }
+                                });
+                                e.preventDefault();
+                            });
+
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row page-titles">
+        {% if session.hacker %}
+            <div class="col-md-12 align-self-center"  style="text-align: center;">
+                <h3 class="text-themecolor">{{frase}}</h3>
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if session.hacker %}
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex m-b-30 align-items-center no-block">
+                            <h5 class="card-title" style="margin-bottom: 0px;">Farmacia</h5>
+                        </div>
+                    </div>
+                    <div class="card-body bg-light">
+                        {% if session.hacker %}
+                            <table class="table" id="gastosTabla">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col" style="text-align: center;">Usar</th>
+                                        <th scope="col" style="text-align: center;">Reponer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for producto in productos %}
+                                        <tr>
+                                            <td scope="row" style="vertical-align: middle;">{{producto.nombre}}</td>
+                                            <td style="vertical-align: middle;">{{producto.cantidad}}</td>
+                                            <td style="text-align: center; vertical-align: middle;">Usar</td>
+                                            <td style="text-align: center; vertical-align: middle;">Reponer</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-lg-12" style="text-align: center;">
+                <img src="{{ url_for('static', filename='img/notice.png') }} /">
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

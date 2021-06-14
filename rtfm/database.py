@@ -1,5 +1,6 @@
 # encoding: utf-8
 from .rtfm import get_db, session, log, datetime
+from .config import send_if_less
 import hashlib, socket
 
 SESSION_TYPES = [
@@ -173,6 +174,44 @@ def cuantoDebo():
     except Exception as e:
         log.send(str(e))
     return None
+
+# Farmacia
+
+def nuevoActualizaProducto(nombre, cantidad):
+    try:
+        #if not 'user_id' in session:
+        #    return False, False, False, None
+        db = get_db()
+        cur = db.execute(f"select cantidad from farmacia where nombre = '{nombre}'")
+        datos = cur.fetchall()
+        existe = False
+        quedan = True
+        if not datos:
+            db.execute(f"insert into farmacia (nombre, cantidad) values ('{nombre}', {cantidad})")
+        else:
+            tmp_cantidad = cantidad + int(datos[0]['cantidad'])
+            if tmp_cantidad < 0:
+                return False, True, cantidad <= send_if_less, int(datos[0]['cantidad'])
+            cantidad = tmp_cantidad
+            db.execute(f"update farmacia set cantidad = {cantidad} where nombre = '{nombre}'")
+            existe = True
+            cur = db.execute(f"select cantidad from farmacia where nombre = '{nombre}'")
+            datos = cur.fetchall()
+            if datos and datos[0]['cantidad'] <= send_if_less:
+                quedan = False
+        db.commit()
+        return True, existe, quedan, cantidad
+    except Exception as e:
+        log.send(str(e), 'EXCEPTION')
+        raise
+        return False, False, False, None
+
+def listaProductos():
+    # Cogemos todos los nombres de usuarios
+    if 'user_id' in session:
+        db = get_db()
+        cur = db.execute("select id, nombre, cantidad from farmacia order by nombre")
+        return cur.fetchall()
 
 # Session
 

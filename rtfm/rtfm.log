@@ -265,3 +265,331 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'comment'. Jinja 
 2021-06-04 10:52:32,731 - [GASTO] - Se ha pagado el gasto Compra Comida DIA
 2021-06-04 10:52:37,358 - [GASTO] - Se ha pagado el gasto Chino
 2021-06-04 10:55:11,430 - [CALENDARIO] - Se ha añadido el evento Karla y Álvaro Fuerteventura.  del dia 2021-09-06 al dia 2021-09-16
+2021-06-05 15:37:02,562 - [GASTO] - Se ha añadido el gasto para bea de Interneses Mayo con un precio de 16.0€
+2021-06-05 15:39:14,249 - [GASTO] - Se ha añadido el gasto para Lina de Five Guys Otra vez xD con un precio de 35.0€
+2021-06-05 16:11:33,442 - [GASTO] - Se ha añadido el gasto para Lina de Pizza hut como no... con un precio de 37.0€
+2021-06-13 17:34:13,420 - [GASTO] - Se ha añadido el gasto para ConnorHack de Compras Lidl con un precio de 154.0€
+2021-06-13 17:35:44,157 - [GASTO] - Se ha añadido el gasto para ConnorHack de Tabaco con un precio de 42.0€
+2021-06-13 17:35:48,033 - [GASTO] - Se ha añadido el gasto para ConnorHack de Tabaco con un precio de 42.0€
+2021-06-13 17:37:49,965 - [GASTO] - Se ha añadido el gasto para ConnorHack de Chino_bañera con un precio de 21.0€
+2021-06-13 19:51:40,576 - [EXCEPTION] - Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:51:40,871 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 105, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:51:47,750 - [EXCEPTION] - Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:51:47,993 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 105, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:51:53,238 - [EXCEPTION] - Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:51:53,422 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 105, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:52:12,183 - [EXCEPTION] - no such table: productos
+2021-06-13 19:52:12,388 - Exception on /farmacia [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 200, in farmacia
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:52:13,723 - [EXCEPTION] - Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:52:13,909 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 105, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:52:14,453 - [EXCEPTION] - Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:52:14,614 - Exception on / [GET]
+Traceback (most recent call last):
+  File "c:\python39\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python39\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python39\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python39\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python39\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 105, in inicio
+    return render_template('index.html')
+  File "c:\python39\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\python39\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\python39\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\python39\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "F:\Github Repositories\rtfm\rtfm\templates\base.html", line 391, in template
+    <a class="waves-effect waves-dark" href="{% url 'farmacia' %}" aria-expanded="false">
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'url'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2021-06-13 19:57:00,678 - [EXCEPTION] - no such table: productos
+2021-06-14 20:52:09,433 - [EXCEPTION] - int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2021-06-14 20:55:56,557 - [ERROR] - error-cant-create-or-update
+2021-06-14 21:10:19,171 - [EXCEPTION] - Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+2021-06-14 21:10:19,376 - [ERROR] - error-cant-create-or-update
+2021-06-14 21:12:12,331 - [EXCEPTION] - Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+2021-06-14 21:12:12,536 - Exception on /actualizarproducto [POST]
+Traceback (most recent call last):
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 209, in actualizarProducto
+    actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+  File "F:\Github Repositories\rtfm\rtfm\database.py", line 185, in nuevoActualizaProducto
+    cur = db.execute("select cantidad from farmacia where nombre = '?'", [nombre])
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 0, and there are 1 supplied.
+2021-06-14 21:12:55,716 - [EXCEPTION] - parameters are of unsupported type
+2021-06-14 21:12:55,908 - Exception on /actualizarproducto [POST]
+Traceback (most recent call last):
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 209, in actualizarProducto
+    actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+  File "F:\Github Repositories\rtfm\rtfm\database.py", line 185, in nuevoActualizaProducto
+    cur = db.execute("select cantidad from farmacia where nombre = '?'", nombre)
+ValueError: parameters are of unsupported type
+2021-06-14 21:14:09,243 - [EXCEPTION] - int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2021-06-14 21:14:09,436 - Exception on /actualizarproducto [POST]
+Traceback (most recent call last):
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 209, in actualizarProducto
+    actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+  File "F:\Github Repositories\rtfm\rtfm\database.py", line 190, in nuevoActualizaProducto
+    db.execute('insert into farmacia (nombre, cantidad) values (?, ?)', [nombre, int(cantidad)])
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2021-06-14 21:14:48,652 - [NONE] - None
+2021-06-14 21:14:48,653 - [EXCEPTION] - int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2021-06-14 21:14:48,812 - Exception on /actualizarproducto [POST]
+Traceback (most recent call last):
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 210, in actualizarProducto
+    actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+  File "F:\Github Repositories\rtfm\rtfm\database.py", line 190, in nuevoActualizaProducto
+    db.execute('insert into farmacia (nombre, cantidad) values (?, ?)', [nombre, int(cantidad)])
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'NoneType'
+2021-06-14 21:16:19,306 - [10] - paracetamol
+2021-06-14 21:16:20,374 - [FARMACIA] - Se ha añadido el fármaco paracetamol con la cantidad de 10 pilulas
+2021-06-14 21:16:27,092 - [10] - paracetamol
+2021-06-14 21:16:27,103 - [EXCEPTION] - Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2021-06-14 21:16:27,265 - Exception on /actualizarproducto [POST]
+Traceback (most recent call last):
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 2051, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1501, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1499, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\github repositories\rtfm\venv\lib\site-packages\flask\app.py", line 1485, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "F:\Github Repositories\rtfm\rtfm\rtfm.py", line 211, in actualizarProducto
+    actualizado, existia, quedan, cantidad = nuevoActualizaProducto(producto, cantidad)
+  File "F:\Github Repositories\rtfm\rtfm\database.py", line 193, in nuevoActualizaProducto
+    db.execute("update farmacia set cantidad = ? where nombre = '?'", [int(cantidad), nombre])
+sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2021-06-14 21:17:38,125 - [10] - paracetamol
+2021-06-14 21:17:45,925 - [FARMACIA] - Se ha actualizar el fármaco paracetamol y ahora hay True pilulas
+2021-06-14 21:18:09,534 - [10] - paracetamol
+2021-06-14 21:18:17,704 - [FARMACIA] - Se ha actualizardo el fármaco paracetamol y ahora hay 30 pilulas
+2021-06-14 21:18:43,862 - [4] - paracetamol
+2021-06-14 21:18:46,622 - [FARMACIA] - Se ha actualizardo el fármaco paracetamol y ahora hay 34 pilulas
+2021-06-14 21:19:06,539 - [-8] - paracetamol
+2021-06-14 21:19:07,991 - [FARMACIA] - Se ha actualizardo el fármaco paracetamol y ahora hay 26 pilulas
+2021-06-14 21:19:19,905 - [-18] - paracetamol
+2021-06-14 21:19:22,475 - [FARMACIA] - Se ha actualizado el fármaco paracetamol y ahora quedan solo 8 pilulas... Mejor si compras
+2021-06-14 21:24:55,572 - [ERROR] - error-cant-create-or-update
+2021-06-14 21:26:50,160 - [ERROR] - No se pueden coger 30 pilulas... Solo hay -30
+2021-06-14 21:27:20,518 - [ERROR] - No se pueden coger 30 pilulas... Solo hay 8
+2021-06-14 21:27:42,198 - [FARMACIA] - Se ha actualizado el fármaco paracetamol y ahora hay 38 pilulas
+2021-06-14 21:27:51,143 - [ERROR] - No se pueden coger 100 pilulas... Solo hay 38
+2021-06-14 21:28:01,666 - [FARMACIA] - Se ha actualizado el fármaco paracetamol y ahora quedan solo 0 pilulas... Mejor si compras

@@ -19,6 +19,8 @@ app.config.from_envvar('RTFM_SETTINGS', silent=True)
 app.config['UPLOAD_PATH'] = os.path.join(DIR_ACTUAL, global_conf['INDEX']['UPLOAD_PATH'])
 app.config['DOWNLOAD_PATH'] = os.path.join(DIR_ACTUAL, global_conf['INDEX']['DOWNLOAD_PATH'])
 
+send_if_less = global_conf['INDEX']['SEND_IF_LESS']
+
 if not os.path.isdir(app.config['UPLOAD_PATH']):
     os.mkdir( app.config['UPLOAD_PATH'] )
 
